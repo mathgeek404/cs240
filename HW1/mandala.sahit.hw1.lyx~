@@ -1,0 +1,556 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\fancyhf{}               % Clear fancy header/footer
+\fancyhead[L]{Sahit Mandala, 9069858745}   % My name in Left footer
+\fancyhead[R]{CS240, Section 313}  % Page number in Right footer
+\makeatletter
+\let\ps@plain\ps@fancy   % Plain page style = fancy page style
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+CS240: Homework 1
+\end_layout
+
+\begin_layout Author
+Sahit Mandala
+\end_layout
+
+\begin_layout Section*
+Problem 1
+\end_layout
+
+\begin_layout Standard
+Note that the original statement has the form 
+\begin_inset Formula $A\Longrightarrow(B\vee C)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+a)
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+i) 
+\begin_inset Formula $B\vee C\Longrightarrow A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ii) Converse 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+iii) Not equivalent
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+vi) Notice that when 
+\begin_inset Formula $B=T,C=T,A=F$
+\end_inset
+
+, then 
+\begin_inset Formula $(A\Longrightarrow(B\vee C))\equiv(F\Longrightarrow(T\vee T))\equiv F\Longrightarrow T\equiv T$
+\end_inset
+
+ but
+\begin_inset Formula $((B\vee C)\Longrightarrow A)\equiv((T\vee T)\Longrightarrow F)\equiv F$
+\end_inset
+
+.
+ Hence, 
+\begin_inset Formula $((B\vee C)\Longrightarrow A)\not\equiv A\Longrightarrow B\vee C$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+b) 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+i) 
+\begin_inset Formula $(\neg B\vee\neg C)\Longrightarrow\neg A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ii) Neither 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+iii) Not equivalent.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+vi) Suppose that 
+\begin_inset Formula $A=T,B=T,C=F$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $(\neg B\vee\neg C)\Longrightarrow\neg A\equiv(\neg T\vee\neg F)\Longrightarrow\neg T\equiv T\Longrightarrow F\equiv F$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $A\Longrightarrow(B\vee C)\equiv T\Longrightarrow T\vee F\equiv T\Longrightarrow T\equiv T$
+\end_inset
+
+.
+ Because the 2 expressions do not agree on the same propsitional values,
+ 
+\begin_inset Formula $A\Longrightarrow(B\vee C)\not\equiv(\neg B\vee\neg C)\Longrightarrow\neg A$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+c) 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+i) 
+\begin_inset Formula $A\wedge\neg B\wedge\neg C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ii) Neither 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+iii) Not equivalent
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+vi) Suppose 
+\begin_inset Formula $A=F,B=T,C=T$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $A\wedge\neg B\wedge\neg C\equiv F\wedge\neg T\wedge\neg T\equiv F$
+\end_inset
+
+ But
+\begin_inset Formula $A\Longrightarrow(B\vee C)\equiv F\Longrightarrow(T\vee T)\equiv F\Longrightarrow T\equiv T$
+\end_inset
+
+.
+ Because the 2 expressions do not agree on the same propsitional values,
+ 
+\begin_inset Formula $A\Longrightarrow(B\vee C)\not\equiv A\wedge\neg B\wedge\neg C$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+d) 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+i) 
+\begin_inset Formula $(\neg B\wedge\neg C)\Longrightarrow\neg A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ii) Contrapositive, noting that by deMorgan's law, 
+\begin_inset Formula $(\neg B\wedge\neg C)\equiv\neg(B\vee C)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+iii) Equivalent
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+vi) Here, we construct the truth table and show the equivalence of the 2
+ expression across all propositional values.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\begin{array}{ccccc}
+A & B & C & A\Longrightarrow(B\vee C) & (\neg B\wedge\neg C)\Longrightarrow\neg A\\
+T & T & T & T & T\\
+T & T & F & T & T\\
+T & F & T & T & T\\
+T & F & F & F & F\\
+F & T & T & T & T\\
+F & T & F & T & T\\
+F & F & T & T & T\\
+F & F & F & T & T
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+e) 
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+i) 
+\begin_inset Formula $(A\wedge\neg C)\Longrightarrow B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ii) Neither 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+iii) Equivalent
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+vi) Recall that 
+\begin_inset Formula $A\Longrightarrow B\equiv\neg A\vee B$
+\end_inset
+
+.
+ Then using associativity and commutivity on 
+\begin_inset Formula $\vee$
+\end_inset
+
+ , 
+\begin_inset Formula $A\Longrightarrow(B\vee C)\equiv\neg A\vee(B\vee C)\equiv(\neg A\vee C)\vee B$
+\end_inset
+
+.
+ Using deMorgan's law, 
+\begin_inset Formula $(\neg A\vee C)\vee B\equiv\neg(A\wedge\neg C)\vee B\equiv(A\wedge\neg C)\Longrightarrow B$
+\end_inset
+
+.
+ Hence, we have shown that 
+\begin_inset Formula $(A\wedge\neg C)\Longrightarrow B\equiv A\Longrightarrow(B\vee C)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Problem 2
+\end_layout
+
+\begin_layout Subsection*
+a)
+\end_layout
+
+\begin_layout Standard
+Here, we construct the truth table:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{array}{ccc}
+P & Q & P\wedge(Q\vee P)\\
+T & T & T\\
+T & F & T\\
+F & T & F\\
+F & F & F
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice that P and 
+\begin_inset Formula $P\wedge(Q\vee P)$
+\end_inset
+
+ are equivalent on every permutation of propositional values, despite the
+ value of 
+\begin_inset Formula $Q$
+\end_inset
+
+.
+ Hence, 
+\begin_inset Formula $P\wedge(Q\vee P)\equiv P$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+b)
+\end_layout
+
+\begin_layout Standard
+I claim that 
+\begin_inset Formula $(P\Longrightarrow Q)\wedge(P\Longrightarrow\neg Q)\equiv\neg P$
+\end_inset
+
+.
+ To prove this, we shall use a truth table:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{array}{cccc}
+P & Q & (P\Longrightarrow Q)\wedge(P\Longrightarrow\neg Q) & \neg P\\
+T & T & T\wedge F\equiv F & F\\
+T & F & F\wedge T\equiv F & F\\
+F & T & T\wedge T\equiv T & T\\
+F & F & T\wedge T\equiv T & T
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As we can see, 
+\begin_inset Formula $(P\Longrightarrow Q)\wedge(P\Longrightarrow\neg Q)$
+\end_inset
+
+ and 
+\begin_inset Formula $\neg P$
+\end_inset
+
+ are equal across all propostional values, so 
+\begin_inset Formula $(P\Longrightarrow Q)\wedge(P\Longrightarrow\neg Q)\equiv\neg P$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection*
+c)
+\end_layout
+
+\begin_layout Standard
+Recall that 
+\begin_inset Formula $A\Longrightarrow B\equiv\neg A\vee B$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $(P\Longrightarrow Q)\Longrightarrow(P\Longrightarrow R)\equiv(\neg P\vee Q)\Longrightarrow(\neg P\vee R)\equiv\neg(\neg P\vee Q)\vee(\neg P\vee R)$
+\end_inset
+
+.
+ By deMorgan's law, 
+\begin_inset Formula $\neg(\neg P\vee Q)\vee(\neg P\vee R)\equiv(P\wedge\neg Q)\vee(\neg P\vee R)\equiv((P\wedge\neg Q)\vee\neg P)\vee R$
+\end_inset
+
+.
+ Notice that 
+\begin_inset Formula $(P\wedge\neg Q)\vee\neg P\equiv(P\vee\neg P)\wedge(\neg P\vee\neg Q)\equiv T\wedge(\neg P\vee\neg Q)\equiv(\neg P\vee\neg Q)\equiv\neg(P\wedge Q)$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $((P\wedge\neg Q)\vee\neg P)\vee R\equiv\neg(P\wedge Q)\vee R\equiv(P\wedge Q)\Longrightarrow R$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $(P\Longrightarrow Q)\Longrightarrow(P\Longrightarrow R)\equiv(P\wedge Q)\Longrightarrow R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 3
+\end_layout
+
+\begin_layout Subsection*
+a)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\exists x\in D\,[P(x)\wedge\neg H(x)]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall x\in D\,[(P(x)\wedge H(x))\Longrightarrow\neg I(x)]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+c)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall x\in D\,[I(x)\Longrightarrow(P(x)\vee R(x))]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+d)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall x\in D\,[\neg K(Darby,x)\Longrightarrow\neg T(Darby,x)]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+e)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\exists x\in D,\forall y\in D\,[R(x)\wedge K(x,y)]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+f)
+\end_layout
+
+\begin_layout Standard
+Some politicians are honest, but some people are not politicians or not
+ honest
+\end_layout
+
+\begin_layout Subsection*
+g)
+\end_layout
+
+\begin_layout Subsection*
+h)
+\end_layout
+
+\begin_layout Subsection*
+i)
+\end_layout
+
+\end_body
+\end_document
