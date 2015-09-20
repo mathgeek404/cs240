@@ -574,8 +574,120 @@ Everyone who is a registered lobbyist has someone other than themselves
  that they trust
 \end_layout
 
-\begin_layout Subsection*
-j)
+\begin_layout Section*
+Problem 4
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\neg(\forall x\in Z)(\exists y\in Z)((x+y=0)\wedge(y<x))\equiv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(\exists x\in Z)\neg(\exists y\in Z)((x+y=0)\wedge(y<x))\equiv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(\exists x\in Z)(\forall y\in Z)\neg((x+y=0)\wedge(y<x))\equiv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(\exists x\in Z)(\forall y\in Z)(\neg(x+y=0)\vee\neg(y<x))\equiv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(\exists x\in Z)(\forall y\in Z)((x+y\not=0)\vee(y\geq x))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 5
+\end_layout
+
+\begin_layout Standard
+Set A as Alex's decision, B as Blair's, C as Casey's decision.
+ Then we assume the following are all true:
+\end_layout
+
+\begin_layout Standard
+If Alex orders dessert, so does Casey: 
+\begin_inset Formula $A\Longrightarrow C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Either Casey or Blair always orders dessert but never both at the same meal:
+ 
+\begin_inset Formula $B\oplus C\equiv(B\vee C)\wedge\neg(B\wedge C)$
+\end_inset
+
+ (that is, XOR)
+\end_layout
+
+\begin_layout Standard
+Either Alex or Blair or both order dessert: 
+\begin_inset Formula $A\vee B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If Blair orders dessert, so does Alex: 
+\begin_inset Formula $B\Longrightarrow A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Constructing the truth table:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{array}{ccccccc}
+A & B & C & A\Longrightarrow C & B\oplus C & A\vee B & B\Longrightarrow A\\
+T & T & T & T & F & T & T\\
+T & T & F & F & T & T & T\\
+T & F & T & T & T & T & T\\
+T & F & F & F & F & T & T\\
+F & T & T & T & F & T & F\\
+F & T & F & T & T & T & F\\
+F & F & T & T & T & F & T\\
+F & F & F & T & F & F & T
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The only set of values on the variables which satisfies our assumption that
+ the given propositions are all true are 
+\begin_inset Formula $A=T,B=F,C=T$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+That is, Alex and Casey get dessert while Blair does not.
 \end_layout
 
 \end_body
