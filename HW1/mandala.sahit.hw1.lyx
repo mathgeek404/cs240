@@ -525,7 +525,7 @@ e)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\exists x\in D,\forall y\in D\,[R(x)\wedge K(x,y)]$
+\begin_inset Formula $\exists x\in D\,(R(x)\wedge(\forall y\in D\,[I(y)\implies K(x,y)])$
 \end_inset
 
 
@@ -536,7 +536,7 @@ f)
 \end_layout
 
 \begin_layout Standard
-Some politicians are honest, but some people are not politicians or not
+Some politicians are honest, but not all people are politicians and are
  honest
 \end_layout
 
@@ -545,7 +545,7 @@ g)
 \end_layout
 
 \begin_layout Standard
-Every politiciant who is honest is trusted by everyone
+Everyone trusts every honest politician.
 \end_layout
 
 \begin_layout Subsection*
@@ -562,7 +562,7 @@ i)
 \end_layout
 
 \begin_layout Standard
-Everyone has someone they do not trust
+There is not someone who trusts everyone.
 \end_layout
 
 \begin_layout Subsection*
@@ -571,7 +571,7 @@ j)
 
 \begin_layout Standard
 Everyone who is a registered lobbyist has someone other than themselves
- that they trust
+ whom they trust
 \end_layout
 
 \begin_layout Section*
