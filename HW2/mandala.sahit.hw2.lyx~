@@ -129,12 +129,139 @@ Recall that
 Simply counting, we see that this set has 16 unique elements, as expected.
 \end_layout
 
-\begin_layout Standard
-b)
-\end_layout
-
 \begin_layout Section*
 Problem 2
+\end_layout
+
+\begin_layout Standard
+Consider the function 
+\begin_inset Formula $f:\mathbb{N}\rightarrow S$
+\end_inset
+
+ defined by 
+\begin_inset Formula $f(n)=2^{n}$
+\end_inset
+
+ (noting that the image of this function is all powers of 2, i.e.
+ S).
+ I claim that this function is a bijection.
+\end_layout
+
+\begin_layout Standard
+First, we show that the function is injective.
+ Suppose 
+\begin_inset Formula $f(i)=f(j)$
+\end_inset
+
+ for some 
+\begin_inset Formula $i,j\in\mathbb{N}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $2^{i}=2^{j}$
+\end_inset
+
+ by our definition of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ But this implies that 
+\begin_inset Formula $i=j$
+\end_inset
+
+, since the bases (
+\begin_inset Formula $\neq0,1,-1$
+\end_inset
+
+) are the same which implies the exponents are equal as well.
+ This shows that 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is injective.
+\end_layout
+
+\begin_layout Standard
+To show surjectivity, let some value 
+\begin_inset Formula $x\in S$
+\end_inset
+
+ be given.
+ By the definition of S, we can choose 
+\begin_inset Formula $i\in\mathbb{N}$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $x=2^{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Problem 3
+\end_layout
+
+\begin_layout Standard
+Let A and B be arbitrary finite sets
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $A\cup B$
+\end_inset
+
+.
+ Suppose that 
+\begin_inset Formula $A\cap B=\emptyset$
+\end_inset
+
+.
+ if S and T are finite disjoint sets, then 
+\begin_inset Formula $|S\cup T|=|S|+|T|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let some element be given.
+ 
+\end_layout
+
+\begin_layout Standard
+Recall the definition of 
+\begin_inset Formula $A\cup B$
+\end_inset
+
+.
+ Clearly, 
+\begin_inset Formula $|A\cup B|\leq|A|+|B|$
+\end_inset
+
+ (if not, then 
+\begin_inset Formula $A\cup B$
+\end_inset
+
+ must contain some element the is not in either A or B, a contradiction
+ on the definition of union).
+ 
+\end_layout
+
+\begin_layout Standard
+Problem 4
+\end_layout
+
+\begin_layout Standard
+Counterexample.
+ Consider the sets 
+\begin_inset Formula $A=\{1,2\},B=\{2,3\},C=$
+\end_inset
+
+
 \end_layout
 
 \end_body

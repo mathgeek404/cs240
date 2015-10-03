@@ -149,18 +149,8 @@ Consider the function
 
 \begin_layout Standard
 First, we show that the function is injective.
- Let some values 
-\begin_inset Formula $x,y\in S$
-\end_inset
-
- be given.
  Suppose 
-\begin_inset Formula $x=y$
-\end_inset
-
-.
- Then 
-\begin_inset Formula $x=2^{i},y=2^{j}$
+\begin_inset Formula $f(i)=f(j)$
 \end_inset
 
  for some 
@@ -168,16 +158,145 @@ First, we show that the function is injective.
 \end_inset
 
 .
- So 
-\begin_inset Formula $f(i)=2^{i}=x$
+ Then 
+\begin_inset Formula $2^{i}=2^{j}$
 \end_inset
 
-,
-\begin_inset Formula $f(j)=2^{j}=y$
+ by our definition of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ But this implies that 
+\begin_inset Formula $i=j$
+\end_inset
+
+, since the bases (
+\begin_inset Formula $\neq0,1,-1$
+\end_inset
+
+) are the same which implies the exponents are equal as well.
+ This shows that 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is injective.
+\end_layout
+
+\begin_layout Standard
+To show surjectivity, let some value 
+\begin_inset Formula $x\in S$
+\end_inset
+
+ be given.
+ By the definition of S, we can choose 
+\begin_inset Formula $i\in\mathbb{N}$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $x=2^{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Problem 3
+\end_layout
+
+\begin_layout Standard
+Let A and B be arbitrary finite sets
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $A\cup B$
+\end_inset
+
+.
+ Suppose that 
+\begin_inset Formula $A\cap B=\emptyset$
+\end_inset
+
+.
+ if S and T are finite disjoint sets, then 
+\begin_inset Formula $|S\cup T|=|S|+|T|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let some element be given.
+ 
+\end_layout
+
+\begin_layout Standard
+Recall the definition of 
+\begin_inset Formula $A\cup B$
+\end_inset
+
+.
+ Clearly, 
+\begin_inset Formula $|A\cup B|\leq|A|+|B|$
+\end_inset
+
+ (if not, then 
+\begin_inset Formula $A\cup B$
+\end_inset
+
+ must contain some element the is not in either A or B, a contradiction
+ on the definition of union).
+ 
+\end_layout
+
+\begin_layout Standard
+Problem 4
+\end_layout
+
+\begin_layout Standard
+We first note that for any arbitrary set A, 
+\begin_inset Formula $A-\{\}=A$
+\end_inset
+
+, because 
+\begin_inset Formula $A-\{\}\subseteq A$
+\end_inset
+
+ by definition of compliment (that is, 
+\begin_inset Formula $A-\{\}=\{x\in A|x\not\in\{\}\}$
+\end_inset
+
+) 
+\begin_inset Formula $\forall x\in A,x\not\in\{\}$
+\end_inset
+
+, so by the definition of compliment, 
+\begin_inset Formula $x\in A-\{\}$
 \end_inset
 
 .
  
+\end_layout
+
+\begin_layout Standard
+Counterexample.
+ Consider the sets 
+\begin_inset Formula $A=\{1,2\},B=\{2,3\},C=\{\}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $(A\cup B)-C=(\{1,2,3\})-\{\}=\{1,2,3\}$
+\end_inset
+
+.
+ Furthermore, 
+\begin_inset Formula $A-C=A$
+\end_inset
+
+ and 
 \end_layout
 
 \end_body
