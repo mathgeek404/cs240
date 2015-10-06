@@ -94,50 +94,175 @@ Problem 1
 \end_layout
 
 \begin_layout Standard
-Let some real numbers a,b be given.
- First, we will prove i iff ii.
- So first suppose a < b.
+Let some real numbers 
+\begin_inset Formula $a,b\in\mathbb{R}$
+\end_inset
+
+ be given.
+ First, we will prove (i) iff (ii).
+ 
+\end_layout
+
+\begin_layout Standard
+So first suppose 
+\begin_inset Formula $a<b$
+\end_inset
+
+.
  Then we can add a to both sides, preserving the inequality, and see that
- a+a < a+b, or equivalently, 2*a < a+b.
- We can multiply both sides by ½ and see that: ½ *2*a<½(a+b) -> a < (a+b)/2
+ 
+\begin_inset Formula $a+a<a+b$
+\end_inset
+
+, or equivalently, 
+\begin_inset Formula $2*a<a+b$
+\end_inset
+
+.
+ We can multiply both sides by 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ and see that: 
+\begin_inset Formula $\frac{1}{2}*2*a<\frac{1}{2}(a+b)\rightarrow a<(a+b)/2$
+\end_inset
+
  .
- But (a+b)/2 is merely the definition of the average of a and b.
- Whence, we have show that the average of a and b is infact greater than
- a.
+ But 
+\begin_inset Formula $(a+b)/2$
+\end_inset
+
+ is merely the definition of the average of 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+.
+ Whence, we have show that the average of 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ is in fact greater than 
+\begin_inset Formula $a$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Now suppose that the average of a and b is greater than a.
- That is, a < (a+b)/2.
+ That is, 
+\begin_inset Formula $a<(a+b)/2$
+\end_inset
+
+.
  We can multiple both sides by 2 and subtract a, preserving the inequality,
- and see that: (2*a)-a < 2*((a+b)/2)-a -> a<a+b-a=b.
- So a < b, as expected.
+ and see that: 
+\begin_inset Formula $(2*a)-a<2*((a+b)/2)-a\rightarrow a<a+b-a=b$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $a<b$
+\end_inset
+
+, as expected.
 \end_layout
 
 \begin_layout Standard
-Overall, we have shown that a<b iff a < (a+b)/2
+Overall, we have shown that 
+\begin_inset Formula $a<b\Longleftrightarrow a<(a+b)/2$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Now we shall prove ii iff iii.
+Now we shall prove (ii) iff (iii).
  Suppose again that the average of a and b is greater than a.
- That is, a < (a+b)/2.
+ That is, 
+\begin_inset Formula $a<(a+b)/2$
+\end_inset
+
+.
  We can multiple both sides by 2 and subtract a, preserving the inequality,
- and see that: (2*a)-a < 2*((a+b)/2)-a -> a<a+b-a=b.
- So a < b.
- Next, we can add b to both sides: a+b < 2*b.
- Finally, we can divide both sides by 2: ½(a+b) < 2b/2=b.
- So the average of a and b is less than b itself, as expected.
+ and see that: 
+\begin_inset Formula $(2*a)-a<2*((a+b)/2)-a\rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $a<a+b-a=b$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $a<b$
+\end_inset
+
+.
+ Next, we can add b to both sides: 
+\begin_inset Formula $a+b<2*b$
+\end_inset
+
+.
+ Finally, we can divide both sides by 2: 
+\begin_inset Formula $\frac{1}{2}(a+b)<2b/2=b$
+\end_inset
+
+.
+ So the average of 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ is less than 
+\begin_inset Formula $b$
+\end_inset
+
+ itself, as expected.
 \end_layout
 
 \begin_layout Standard
 Next, assume that the average of a and b is less than b itself.
- That is, ½(a+b) < b.
+ That is, 
+\begin_inset Formula $\frac{1}{2}(a+b)<b$
+\end_inset
+
+.
  We can multiply both sides by 2 and subtract b, preserving the inequality,
- and see that: 2*½(a+b)-b < 2*b-b -> a+b-b=a<b.
- By our proof above (namely that (i) iff (ii)), we know that if a<b, then
- a < (a+b)/2.
- Hence, we have shown that if ½(a+b) < b, then a < (a+b)/2.
+ and see that: 
+\begin_inset Formula $2*\frac{1}{2}(a+b)-b<2*b-b\rightarrow a+b-b=a<b$
+\end_inset
+
+.
+ By our proof above (namely that (i) iff (ii)), we know that if 
+\begin_inset Formula $a<b$
+\end_inset
+
+, then 
+\begin_inset Formula $a<(a+b)/2$
+\end_inset
+
+.
+ Hence, we have shown that if 
+\begin_inset Formula $\frac{1}{2}(a+b)<b$
+\end_inset
+
+, then 
+\begin_inset Formula $a<(a+b)/2$
+\end_inset
+
+.
  So overall, (ii) iff (iii)
 \end_layout
 
@@ -389,6 +514,78 @@ Overall, we have shown that
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section*
+Problem 5
+\end_layout
+
+\begin_layout Standard
+The flaw is that the inductive step's statement is incorrect .
+ Let some 
+\begin_inset Formula $a\in\mathbb{R}^{+}$
+\end_inset
+
+ be given.
+ Setting 
+\begin_inset Formula $n=0$
+\end_inset
+
+, we see that 
+\begin_inset Formula $a^{n}=a^{0}=1$
+\end_inset
+
+.
+ Then the inductive hypothesis (in this flawed proof) states that 
+\begin_inset Formula $a^{k}=1,\forall k\leq n$
+\end_inset
+
+, from which the proof follows that 
+\begin_inset Formula $a^{k+1}=a^{k}*a^{k}/a^{k-1}=1*1/1=1$
+\end_inset
+
+, claiming 
+\begin_inset Formula $a^{k-1}=a^{k}=1$
+\end_inset
+
+ by the inductive hypothesis.
+ But in fact, when 
+\begin_inset Formula $k=0$
+\end_inset
+
+, 
+\begin_inset Formula $a^{k-1}=a^{0-1}=a^{-1}\neq1$
+\end_inset
+
+ for any arbirary a.
+ The proof, upon showing the base case at 
+\begin_inset Formula $n=0$
+\end_inset
+
+, uses the incorrect inductive hypothesis 
+\begin_inset Formula $a^{n}=1,\forall k\leq n$
+\end_inset
+
+; in fact, k must be strictly greater than or equal to 0, so 
+\begin_inset Formula $a^{n}=1,\forall k\mbox{ s.t. }0\leq k\leq n$
+\end_inset
+
+ is the correct inductive hypothesis.
+ From this, the assumption that 
+\begin_inset Formula $a^{k-1}=1$
+\end_inset
+
+ fails when 
+\begin_inset Formula $k=0$
+\end_inset
+
+ (e.g.
+ when inductively proving P(1) from P(0)), from which all subsequent cases
+ (
+\begin_inset Formula $P(n),n>1$
+\end_inset
+
+) fail.
 \end_layout
 
 \end_body
