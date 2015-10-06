@@ -1,5 +1,5 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
 \textclass article
@@ -20,13 +20,13 @@
 \font_roman default
 \font_sans default
 \font_typewriter default
-\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -37,24 +37,15 @@
 \use_hyperref false
 \papersize default
 \use_geometry true
-\use_package amsmath 1
-\use_package amssymb 1
-\use_package cancel 1
-\use_package esint 1
-\use_package mathdots 1
-\use_package mathtools 1
-\use_package mhchem 1
-\use_package stackrel 1
-\use_package stmaryrd 1
-\use_package undertilde 1
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
-\cite_engine_type default
-\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
 \use_refstyle 1
 \index Index
 \shortcut idx
@@ -143,7 +134,10 @@ Problem 2
 \end_layout
 
 \begin_layout Standard
-Consider the function 
+It is easy to see that S is not finite.
+ Hence, we shall construct a pairing (i.e.
+ a bijection) between the natural numbers and S.
+ Consider the function 
 \begin_inset Formula $f:\mathbb{N}\rightarrow S$
 \end_inset
 
@@ -223,6 +217,18 @@ To show surjectivity, let some value
 
 ).
  Hence, we have shown surjectivity.
+\end_layout
+
+\begin_layout Standard
+So we have shown that 
+\begin_inset Formula $f$
+\end_inset
+
+ is a bijection from 
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+ to S, from which it follows that S is countable.
 \end_layout
 
 \begin_layout Subsection*
@@ -512,6 +518,10 @@ We first note that for any arbitrary set A,
 \begin_inset Formula $x\in A-\{\}$
 \end_inset
 
+, implying that 
+\begin_inset Formula $A\subseteq A-\{\}$
+\end_inset
+
 .
  Hence, 
 \begin_inset Formula $A-\{\}=A$
@@ -591,6 +601,16 @@ So the symmetric difference must be:
 b)
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename cs240_hw2.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 c)
 \end_layout
@@ -601,7 +621,7 @@ Let A,B be arbitrary sets.
 \begin_inset Formula $A\oplus B=(B-A)\cup(A-B)$
 \end_inset
 
-.
+ by mutual inclusion.
 \end_layout
 
 \begin_layout Standard
@@ -618,15 +638,19 @@ First, let some element
 \begin_inset Formula $x\in B,x\not\in A$
 \end_inset
 
- (note both propositions cannot be simeltaneously true, since 
+ (note both propositions cannot be simultaneously true, since 
 \begin_inset Formula $x$
 \end_inset
 
- can be and not be in A,B at the same time).
+ can't be and not be in A,B at the same time).
 \end_layout
 
 \begin_layout Standard
-Case 1: Suppose that 
+
+\series bold
+Case 1
+\series default
+: Suppose that 
 \begin_inset Formula $x\in A,x\not\in B$
 \end_inset
 
@@ -648,7 +672,11 @@ Case 1: Suppose that
 \end_layout
 
 \begin_layout Standard
-Case 2: Suppose that 
+
+\series bold
+Case 2
+\series default
+: Suppose that 
 \begin_inset Formula $x\in B,x\not\in A$
 \end_inset
 
@@ -704,7 +732,11 @@ Now let some element
 \end_layout
 
 \begin_layout Standard
-Case 1: Suppose that 
+
+\series bold
+Case 1
+\series default
+: Suppose that 
 \begin_inset Formula $x\in(B-A)$
 \end_inset
 
@@ -723,7 +755,11 @@ Case 1: Suppose that
 \end_layout
 
 \begin_layout Standard
-Case 2: Suppose that 
+
+\series bold
+Case 2
+\series default
+: Suppose that 
 \begin_inset Formula $x\in(A-B)$
 \end_inset
 
@@ -760,7 +796,7 @@ So
 
 \begin_layout Standard
 Overall, this implies that 
-\begin_inset Formula $A\oplus B=B-A)\cup(A-B)$
+\begin_inset Formula $A\oplus B=(B-A)\cup(A-B)$
 \end_inset
 
 
