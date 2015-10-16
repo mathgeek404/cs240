@@ -129,12 +129,55 @@ Recall that
 Simply counting, we see that this set has 16 unique elements, as expected.
 \end_layout
 
-\begin_layout Standard
-b)
-\end_layout
-
 \begin_layout Section*
 Problem 2
+\end_layout
+
+\begin_layout Standard
+Consider the function 
+\begin_inset Formula $f:\mathbb{N}\rightarrow S$
+\end_inset
+
+ defined by 
+\begin_inset Formula $f(n)=2^{n}$
+\end_inset
+
+ (noting that the image of this function is all powers of 2, i.e.
+ S).
+ I claim that this function is a bijection.
+\end_layout
+
+\begin_layout Standard
+First, we show that the function is injective.
+ Let some values 
+\begin_inset Formula $x,y\in S$
+\end_inset
+
+ be given.
+ Suppose 
+\begin_inset Formula $x=y$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $x=2^{i},y=2^{j}$
+\end_inset
+
+ for some 
+\begin_inset Formula $i,j\in\mathbb{N}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $f(i)=2^{i}=x$
+\end_inset
+
+,
+\begin_inset Formula $f(j)=2^{j}=y$
+\end_inset
+
+.
+ 
 \end_layout
 
 \end_body

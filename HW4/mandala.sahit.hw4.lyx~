@@ -3,14 +3,6 @@
 \begin_document
 \begin_header
 \textclass article
-\begin_preamble
-\fancyhf{}               % Clear fancy header/footer
-\fancyhead[L]{Sahit Mandala, 9069858745}   % My name in Left footer
-\fancyhead[R]{CS240, Section 313}  % Page number in Right footer
-\makeatletter
-\let\ps@plain\ps@fancy   % Plain page style = fancy page style
-\makeatother
-\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -71,14 +63,6 @@
 \end_header
 
 \begin_body
-
-\begin_layout Title
-CS240: Homework 4
-\end_layout
-
-\begin_layout Author
-Sahit Mandala
-\end_layout
 
 \begin_layout Section*
 Problem 1
@@ -401,7 +385,7 @@ Overall, we have shown that
  holds.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsection*
 Problem 2
 \end_layout
 
