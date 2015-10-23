@@ -1,0 +1,1205 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\fancyhf{}               % Clear fancy header/footer
+\fancyhead[L]{Sahit Mandala, 9069858745}   % My name in Left footer
+\fancyhead[R]{CS240, Section 313}  % Page number in Right footer
+\makeatletter
+\let\ps@plain\ps@fancy   % Plain page style = fancy page style
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+CS240: Homework 5
+\end_layout
+
+\begin_layout Author
+Sahit Mandala
+\end_layout
+
+\begin_layout Section*
+Problem 1
+\end_layout
+
+\begin_layout Standard
+0th: 
+\begin_inset Formula $[5,8,2,6,1,4,7,3]$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+1st: 
+\begin_inset Formula $[5,2,6,1,4,7,3,8]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2st: 
+\begin_inset Formula $[2,5,1,4,6,3,7,8]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3st: 
+\begin_inset Formula $[2,1,4,5,3,6,7,8]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+4st: 
+\begin_inset Formula $[1,2,4,3,5,6,7,8]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+5st: 
+\begin_inset Formula $[1,2,3,4,5,6,7,8]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+6st: 
+\begin_inset Formula $[1,2,3,4,5,6,7,8]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 2
+\end_layout
+
+\begin_layout Standard
+Here, we define 
+\begin_inset Formula $P(x)$
+\end_inset
+
+ : = on the mth iteration of the inner loop, 
+\begin_inset Formula $(i),(ii),(iii),(iv),(v)$
+\end_inset
+
+ all hold.
+ 
+\end_layout
+
+\begin_layout Standard
+Say we are given 
+\begin_inset Formula $A,n\in\mathbb{N}$
+\end_inset
+
+.
+ We will use induction to show 
+\begin_inset Formula $P(x)$
+\end_inset
+
+ holds on every iteration of the loop:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Base case P(0):
+\end_layout
+
+\begin_layout Standard
+On the 0th iteration, the loop has not executed once, so we would like to
+ check that 
+\begin_inset Formula $m,i,k,A$
+\end_inset
+
+ satisfy the loop invariant prior to loop execution.
+ First, on line 1, 
+\begin_inset Formula $m=n$
+\end_inset
+
+; furthermore, on line (2), we see that 
+\begin_inset Formula $m>1$
+\end_inset
+
+ (otherwise, the loop on line (2) would never be executed, but was assumed
+ that we are executing line (5)) Notice that on line 3 and 4 respectively,
+ 
+\begin_inset Formula $k=0$
+\end_inset
+
+ and 
+\begin_inset Formula $i=0$
+\end_inset
+
+.
+ Clearly, 
+\begin_inset Formula $0\leq i\le0\leq m-1$
+\end_inset
+
+ and 
+\begin_inset Formula $0\leq k\leq i$
+\end_inset
+
+.
+ Furthermore, the statement (iii) is also true since 
+\begin_inset Formula $A[0,...,0]=A[0]$
+\end_inset
+
+ and 
+\begin_inset Formula $A[0,...,(k-1)=-1]=[]$
+\end_inset
+
+; trivially, every element in 
+\begin_inset Formula $A[0]$
+\end_inset
+
+ is 
+\begin_inset Formula $\geq$
+\end_inset
+
+ every element in the empty array [].
+ Also, the singleton array 
+\begin_inset Formula $A[0]$
+\end_inset
+
+ is sorted, so 
+\begin_inset Formula $(iv)$
+\end_inset
+
+ holds.
+ Finally, since 
+\begin_inset Formula $A$
+\end_inset
+
+ is currently unchanged, it is clearly a permutation of the original array
+ input (namely, the identity permutation).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Inductive Step:
+\series default
+ Assume that 
+\begin_inset Formula $P(x)$
+\end_inset
+
+ for some 
+\begin_inset Formula $x\in\mathbb{N}$
+\end_inset
+
+.
+ Then:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $0\leq i_{x}\leq m_{x}-1$
+\end_inset
+
+;
+\begin_inset Formula $0\leq k\leq i_{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All elements from 
+\begin_inset Formula $A[k_{x},..,i_{x}]$
+\end_inset
+
+ are 
+\begin_inset Formula $\geq$
+\end_inset
+
+ than any element from 
+\begin_inset Formula $A_{x}[0,..,(k_{x}-1)]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All elements from 
+\begin_inset Formula $A_{x}[k_{x},..,i_{x}]$
+\end_inset
+
+ are sorted
+\end_layout
+
+\begin_layout Standard
+A is a permutation of the original input array
+\end_layout
+
+\begin_layout Standard
+We use the subscript x to indicate these are values after the xth iteration
+ of the loop.
+\end_layout
+
+\begin_layout Standard
+We want to show 
+\begin_inset Formula $P(x+1)$
+\end_inset
+
+ holds, specifically that (i)-(v) hold for 
+\begin_inset Formula $i_{x+1},m_{x+1},k_{x+1},A_{x+1}$
+\end_inset
+
+.
+ If the 
+\begin_inset Formula $x+1th$
+\end_inset
+
+ does not occur, then we are done, so assume this iteration occurs.
+ 
+\end_layout
+
+\begin_layout Standard
+At the beginning of the loop, 
+\begin_inset Formula $i_{x+1}=i_{x},m_{x+1}=m_{x},k_{x+1}=k_{x},A_{x+1}=A_{x}$
+\end_inset
+
+, since those were the results after the last iteration.
+ Since we assume the loop is being executed, the conditional 
+\begin_inset Formula $i_{x+1}=i_{x}<m_{x+1}-1$
+\end_inset
+
+ on line (5) holds.
+ Consider 2 cases (noting that, at line (6), 
+\begin_inset Formula $i_{x+1}=i_{x}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Case 1
+\series default
+: If 
+\begin_inset Formula $A_{x+1}[i_{x}]>A_{x+1}[i_{x}+1]$
+\end_inset
+
+, then we swap these entries.
+ So 
+\begin_inset Formula $A_{x+1}[i_{x}]=A_{x}[i_{x}+1]$
+\end_inset
+
+ and 
+\begin_inset Formula $A_{x+1}[i_{x}+1]=A_{x}[i_{x}]$
+\end_inset
+
+ after (7) and then 
+\begin_inset Formula $k_{x+1}=i_{x+1}+1=i_{x}+1$
+\end_inset
+
+ after (8).
+ At (9), we increment i, so 
+\begin_inset Formula $i_{x+1}=i_{x}+1$
+\end_inset
+
+, completing the iteration.
+ 
+\end_layout
+
+\begin_layout Standard
+Since we know 
+\begin_inset Formula $0\leq i_{x}$
+\end_inset
+
+ 
+\begin_inset Formula $i_{x+1}=i_{x}<m_{x+1}-1$
+\end_inset
+
+ on line 
+\begin_inset Formula $5$
+\end_inset
+
+, we see that 
+\begin_inset Formula $0\leq i_{x+1}=i_{x}+1\leq m-1$
+\end_inset
+
+ after the iteration.
+\end_layout
+
+\begin_layout Standard
+Furthermore, since 
+\begin_inset Formula $k_{x+1}=i_{x}+1=i_{x+1}$
+\end_inset
+
+ after the iteration (note 
+\begin_inset Formula $i_{x}\geq0$
+\end_inset
+
+), then 
+\begin_inset Formula $0\leq k_{x+1}\leq i_{x+1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We now want to show (iii).
+ We know that all elements 
+\begin_inset Formula $A_{x}[k_{x},...,i_{x}]$
+\end_inset
+
+ are 
+\begin_inset Formula $\geq$
+\end_inset
+
+ than elements in 
+\begin_inset Formula $A_{x}[0,...,(k_{x}-1)]$
+\end_inset
+
+ by the inductive hypothesis.
+ Consider 
+\begin_inset Formula $A_{x+1}[k_{x+1},...,i_{x+1}]=A_{x+1}[i_{x}+1,...,i_{x}+1]=A_{x+1}[i_{x}+1]$
+\end_inset
+
+ and 
+\begin_inset Formula $A_{x+1}[0,...,(k_{x+1}-1)]=A_{x+1}[0,...,i_{x}]$
+\end_inset
+
+.
+ We know that 
+\begin_inset Formula $A_{x}[i_{x}+1]=A_{x+1}[i_{x}]<A_{x}[i_{x}]=A_{x+1}[i_{x}+1]$
+\end_inset
+
+ from the assumption and swap step.
+ Since 
+\begin_inset Formula $A_{x+1}[i_{x}+1]=A_{x}[i_{x}]$
+\end_inset
+
+ is 
+\begin_inset Formula $\ge$
+\end_inset
+
+ all elements in 
+\begin_inset Formula $A_{x}[0,...,(k_{x}-1)]=A_{x+1}[0,...,i_{x}-1]$
+\end_inset
+
+ (since these 
+\begin_inset Formula $k_{x}-1$
+\end_inset
+
+ entries were unchanged in this iteration), it follows that 
+\begin_inset Formula $A_{x+1}[i_{x}+1]=A_{x+1}[k_{x+1},...,i_{x+1}]$
+\end_inset
+
+ is 
+\begin_inset Formula $\ge$
+\end_inset
+
+ all elements in 
+\begin_inset Formula $A_{x+1}[0,...,i_{x}-1,i_{x}]=A_{x+1}[0,..,k_{x+1}-1]$
+\end_inset
+
+, implying 
+\begin_inset Formula $(iii)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To show 
+\begin_inset Formula $(iv)$
+\end_inset
+
+, note that 
+\begin_inset Formula $A_{x+1}[k_{x+1},...,i_{x+1}]=A_{x+1}[i_{x}+1,...,i_{x}+1]=A_{x+1}[i_{x}+1]$
+\end_inset
+
+, so we see that this singleton list is trivially sorted.
+\end_layout
+
+\begin_layout Standard
+To show 
+\begin_inset Formula $(v)$
+\end_inset
+
+, recall that 
+\begin_inset Formula $A_{x}$
+\end_inset
+
+ was a permutation of the original input array.
+ Also note that 
+\begin_inset Formula $A_{x+1}$
+\end_inset
+
+ has the same entries at every index as 
+\begin_inset Formula $A_{x}$
+\end_inset
+
+ except at 
+\begin_inset Formula $i_{x},i_{x+1}$
+\end_inset
+
+.
+ At these indices, we swapped the values of 
+\begin_inset Formula $A_{x}$
+\end_inset
+
+at 
+\begin_inset Formula $i_{x+1}=i_{x}+1,i_{x}+1$
+\end_inset
+
+.
+ That is, we permuted these 2 entries from 
+\begin_inset Formula $A_{x}$
+\end_inset
+
+ to 
+\begin_inset Formula $A_{x+1}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $A_{x+1}$
+\end_inset
+
+ is a permutation of 
+\begin_inset Formula $A_{x}$
+\end_inset
+
+, and because the composition of permutations are permutations, 
+\begin_inset Formula $A_{x+1}$
+\end_inset
+
+ must be a permutation of the original input array, as expected.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Case 2
+\series default
+: If 
+\begin_inset Formula $A_{x+1}[i_{x}]\leq A_{x+1}[i_{x}+1]$
+\end_inset
+
+, then the if statement is entirely skipped, so there are no changes to
+ 
+\begin_inset Formula $A,k$
+\end_inset
+
+ between lines (6)-(8).
+ At (9), we increment i, so 
+\begin_inset Formula $i_{x+1}=i_{x}+1$
+\end_inset
+
+, completing the iteration.
+ 
+\end_layout
+
+\begin_layout Standard
+Since we know 
+\begin_inset Formula $0\leq i_{x}$
+\end_inset
+
+ 
+\begin_inset Formula $i_{x+1}=i_{x}<m_{x+1}-1$
+\end_inset
+
+ on line 
+\begin_inset Formula $5$
+\end_inset
+
+, we see that 
+\begin_inset Formula $0\leq i_{x+1}=i_{x}+1\leq m-1$
+\end_inset
+
+ after the iteration.
+ Since 
+\begin_inset Formula $k_{x+1}=k_{x}\leq i_{x}$
+\end_inset
+
+, then 
+\begin_inset Formula $k_{x+1}=k_{x}\leq i_{x}+1=i_{x+1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $A_{x+1}[i_{x}]\leq A_{x+1}[i_{x}+1]$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+We know that all elements 
+\begin_inset Formula $A_{x}[k_{x},...,i_{x}]$
+\end_inset
+
+ are 
+\begin_inset Formula $\geq$
+\end_inset
+
+ than elements in 
+\begin_inset Formula $A_{x}[0,...,(k_{x}-1)]$
+\end_inset
+
+ by the inductive hypothesis.
+ Since 
+\begin_inset Formula $A_{x+1}=A_{x}$
+\end_inset
+
+, note that 
+\begin_inset Formula $A_{x+1}[i_{x+1}]=A_{x}[i_{x}+1]$
+\end_inset
+
+ is 
+\begin_inset Formula $\geq$
+\end_inset
+
+ all elements in 
+\begin_inset Formula $A_{x}[0,...,(k_{x}-1)]=A_{x+1}[0,...,(k_{x+1}-1)]$
+\end_inset
+
+.
+ So all elements in 
+\begin_inset Formula $A_{x+1}[k_{x+1},...,i_{x+1}]$
+\end_inset
+
+ are 
+\begin_inset Formula $\geq$
+\end_inset
+
+ then all elements in 
+\begin_inset Formula $A_{x+1}[0,...,(k_{x+1}-1)]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $(iv)$
+\end_inset
+
+, we also know that 
+\begin_inset Formula $A_{x}[k_{x},...,i_{x}]=A_{x+1}[k_{x+1},...,i_{x+1}-1]$
+\end_inset
+
+ is sorted by the inductive hypothesis.
+ We also know that 
+\begin_inset Formula $A_{x+1}[i_{x}]=A_{x+1}[i_{x+1}-1]\leq A_{x+1}[i_{x}+1]=A_{x+1}[i_{x+1}]$
+\end_inset
+
+.
+ So clearly, the array 
+\begin_inset Formula $A_{x+1}[k_{x+1},...,i_{x+1}]$
+\end_inset
+
+ is sorted since 
+\begin_inset Formula $A_{x+1}[k_{x+1},...,i_{x+1}-1]$
+\end_inset
+
+ is sorted and 
+\begin_inset Formula $A_{x+1}[i_{x+1}]$
+\end_inset
+
+ is the larger than or equal to the largest element of 
+\begin_inset Formula $A_{x+1}[k_{x+1},...,i_{x+1}-1]$
+\end_inset
+
+, making the whole subarray sorted.
+\end_layout
+
+\begin_layout Standard
+Finally, since 
+\begin_inset Formula $A_{x}=A_{x+1}$
+\end_inset
+
+ and 
+\begin_inset Formula $(v)$
+\end_inset
+
+ holds for 
+\begin_inset Formula $A_{x}$
+\end_inset
+
+, we know that 
+\begin_inset Formula $(v)$
+\end_inset
+
+ holds for 
+\begin_inset Formula $A_{x+1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Problem 3
+\end_layout
+
+\begin_layout Standard
+Let some 
+\begin_inset Formula $A,n\in\mathbb{N}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(x) := After the xth iteration of the loop at (2), (i),(ii),(iii) of the
+ outer loop invariabts hold.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Base Case P(0):
+\end_layout
+
+\begin_layout Standard
+On this 0th iteration, we see that at line 1, 
+\begin_inset Formula $m_{0}=n$
+\end_inset
+
+ is set.
+ Since this is the only line executed, we readily see that 
+\begin_inset Formula $0\leq m_{0}\leq n$
+\end_inset
+
+.
+ Further more, the subarray 
+\begin_inset Formula $A[m_{0},...,n-1]=A[n,n-1]$
+\end_inset
+
+ is the empty array.
+ The empty array satisfies both (ii) and (iii) since there are no elements
+ in the array to consider.
+ Hence, we have shown P(0).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Inductive Step:
+\series default
+ Assume that 
+\begin_inset Formula $P(x)$
+\end_inset
+
+ for some 
+\begin_inset Formula $x\in\mathbb{N}$
+\end_inset
+
+.
+ Then:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $0\leq m_{x}\leq n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All elements from 
+\begin_inset Formula $A_{x}[m_{x},..,n-1]$
+\end_inset
+
+ are in sorted order
+\end_layout
+
+\begin_layout Standard
+All elements from 
+\begin_inset Formula $A_{x}[m_{x},..,n-1]$
+\end_inset
+
+ are 
+\begin_inset Formula $\geq$
+\end_inset
+
+ elements in 
+\begin_inset Formula $A_{x}[0,...,m_{x}-1]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We want to show 
+\begin_inset Formula $P(x+1)$
+\end_inset
+
+ holds, specifically that (i)-(v) hold for 
+\begin_inset Formula $m_{x+1},A_{x+1}$
+\end_inset
+
+.
+ If the 
+\begin_inset Formula $x+1th$
+\end_inset
+
+ does not occur, then we are done, so assume this iteration occurs and completes.
+ Note that 
+\begin_inset Formula $m_{x+1}=m_{x},A_{x+1}=A_{x}$
+\end_inset
+
+ at the beginning of the loop.
+\end_layout
+
+\begin_layout Standard
+During this iteration, 
+\begin_inset Formula $i_{x+1}=0,k_{x+1}=0$
+\end_inset
+
+ are set at lines 3,4.
+ Then the while loop at (5) iterates.
+ We assumed the whole program and thus this inner while loop should complete,
+ say in 
+\begin_inset Formula $y$
+\end_inset
+
+ iterations.
+ By the inner loop invariant, after the while loop completes, 
+\begin_inset Formula $0\leq i_{x+1}\leq m_{x+1}-1=m_{x}-1$
+\end_inset
+
+ (noting that 
+\begin_inset Formula $m_{x+1}$
+\end_inset
+
+ is unchanged in the inner loop), 
+\begin_inset Formula $0\leq k_{x+1}\leq i_{x+1}$
+\end_inset
+
+, all elements from 
+\begin_inset Formula $A_{x+1}[k_{x+1},..,i_{x+1}]$
+\end_inset
+
+ are 
+\begin_inset Formula $\geq$
+\end_inset
+
+ than any element from 
+\begin_inset Formula $A_{x+1}[0,..,(k_{x+1}-1)]$
+\end_inset
+
+, and all elements from 
+\begin_inset Formula $A_{x+1}[k_{x+1},..,i_{x+1}]$
+\end_inset
+
+ are sorted.
+ Since we assumed the inner while loop terminated, we know the conditional
+ at (5) must have been false, so 
+\begin_inset Formula $i_{x+1}\geq m_{x+1}-1=m_{x}-1$
+\end_inset
+
+.
+ I would also note that the subarrays 
+\begin_inset Formula $A_{x}[m_{x},...,(n-1)]=A_{x+1}[m_{x+1},...,(n-1)]$
+\end_inset
+
+ since 
+\begin_inset Formula $m_{x}=m_{x+1}$
+\end_inset
+
+ and 
+\begin_inset Formula $i_{x+1}<m_{x+1}-1$
+\end_inset
+
+ on the inner loop, so the entries 
+\begin_inset Formula $A_{x+1}[m_{x+1},...,(n-1)]$
+\end_inset
+
+ are never accessed and thus never changed.
+ Finally, at (10), 
+\begin_inset Formula $m_{x+1}\leftarrow k_{x+1}$
+\end_inset
+
+ is set.
+\end_layout
+
+\begin_layout Standard
+To show (i), first of all, notice that 
+\begin_inset Formula $i_{x+1}\leq m_{x}-1$
+\end_inset
+
+ and 
+\begin_inset Formula $i_{x+1}\geq m_{x}-1$
+\end_inset
+
+, which implies 
+\begin_inset Formula $i_{x+1}=m_{x}-1$
+\end_inset
+
+.
+ We will also note that 
+\begin_inset Formula $m_{x}\leq n$
+\end_inset
+
+ by the inductive hypothesis, so 
+\begin_inset Formula $i_{x+1}=m_{x}-1<n$
+\end_inset
+
+, and furthermore, 
+\begin_inset Formula $0\leq k_{x+1}\leq i_{x+1}<n$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $m_{x+1}=k_{x+1}$
+\end_inset
+
+, we see that 
+\begin_inset Formula $0\leq m_{x+1}\leq n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To show (iii), first recall 
+\begin_inset Formula $A_{x}[m_{x},...,(n-1)]=A_{x+1}[m_{x},...,(n-1)]$
+\end_inset
+
+ and all elements of 
+\begin_inset Formula $A_{x}[m_{x},...,(n-1)]$
+\end_inset
+
+ are 
+\begin_inset Formula $\geq$
+\end_inset
+
+ elements of 
+\begin_inset Formula $A_{x}[0,...,m_{x}-1]$
+\end_inset
+
+.
+ The elements of 
+\begin_inset Formula $A_{x+1}$
+\end_inset
+
+ and 
+\begin_inset Formula $A_{x}$
+\end_inset
+
+ are a permutation of the original A, and since 
+\begin_inset Formula $A_{x}[m_{x},...,(n-1)]=A_{x+1}[m_{x},...,(n-1)]$
+\end_inset
+
+, we can infer that all the elements in 
+\begin_inset Formula $A_{x}[0,...,m_{x}-1]$
+\end_inset
+
+ are also in 
+\begin_inset Formula $A_{x+1}[0,...,m_{x}-1]=A_{x+1}[0,...,m_{x}-1]$
+\end_inset
+
+ (though potentially permuted.
+ This means that all elements of 
+\begin_inset Formula $A_{x+1}[m_{x},...,(n-1)]=A_{x}[m_{x},...,(n-1)]$
+\end_inset
+
+ are 
+\begin_inset Formula $\geq$
+\end_inset
+
+ elements of 
+\begin_inset Formula $A_{x+1}[0,...,m_{x}-1]$
+\end_inset
+
+.
+ Now consider the subarray 
+\begin_inset Formula $A_{x+1}[k_{x+1},...,i_{x+1}]$
+\end_inset
+
+, which we know is 
+\begin_inset Formula $\geq$
+\end_inset
+
+ the elements of 
+\begin_inset Formula $A_{x+1}[0,...,k_{x+1}]$
+\end_inset
+
+ by the inner loop invariant.
+ We also noted that 
+\begin_inset Formula $m_{x+1}=k_{x+1}$
+\end_inset
+
+ and 
+\begin_inset Formula $i_{x+1}=m_{x}-1$
+\end_inset
+
+, so 
+\begin_inset Formula $A_{x+1}[k_{x+1},...,i_{x+1}]=A_{x+1}[m_{x+1},...,m_{x}-1]$
+\end_inset
+
+.
+ Clearly, all elements of 
+\begin_inset Formula $A_{x+1}[m_{x+1},...,(n-1)]$
+\end_inset
+
+ are 
+\begin_inset Formula $\geq$
+\end_inset
+
+ elements of 
+\begin_inset Formula $A_{x+1}[0,...,k_{x+1}]=A_{x+1}[0,...,m_{x+1}]\subseteq A_{x+1}[0,...,m_{x+1}-1]$
+\end_inset
+
+, and we just showed that this is true for 
+\begin_inset Formula $A_{x+1}[m_{x+1},...,m_{x}-1]$
+\end_inset
+
+ as well.
+ So the elements of
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $A_{x+1}[m_{x+1},...,(n-1)]$
+\end_inset
+
+ must be 
+\begin_inset Formula $\geq$
+\end_inset
+
+ the elements of 
+\begin_inset Formula $A_{x+1}[0,...,m_{x+1}]$
+\end_inset
+
+, thus proving (iii) 
+\end_layout
+
+\begin_layout Standard
+To show (ii), first note that because 
+\begin_inset Formula $A_{x}[m_{x},...,(n-1)]=A_{x+1}[m_{x},...,(n-1)]$
+\end_inset
+
+ and 
+\begin_inset Formula $A_{x}[m_{x},...,(n-1)]$
+\end_inset
+
+ is sorted by the inductive hypothesis, 
+\begin_inset Formula $A_{x+1}[m_{x},...,(n-1)]$
+\end_inset
+
+ is also sorted.
+\end_layout
+
+\begin_layout Section*
+Problem 4
+\end_layout
+
+\begin_layout Subsection*
+Partial correctness:
+\end_layout
+
+\begin_layout Standard
+Let some 
+\begin_inset Formula $A,n$
+\end_inset
+
+ be given.
+ Assume that the program terminates on this input.
+ This implies that the while loop at (2) must have exited, which means that
+ 
+\begin_inset Formula $m\leq1$
+\end_inset
+
+.
+ Say that the outer loop terminated on the kth iteration, for some 
+\begin_inset Formula $k\in\mathbb{N}$
+\end_inset
+
+.
+ Then, by the outer loop invariant, 
+\begin_inset Formula $0\leq m$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $0\leq m\leq1$
+\end_inset
+
+.
+ Since m is an integer, there are only 2 possible cases:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Case 1
+\series default
+: Suppose 
+\begin_inset Formula $m=0$
+\end_inset
+
+.
+ Then by the outer loop invariant, all the elements from 
+\begin_inset Formula $A[m,...,n-1]$
+\end_inset
+
+=
+\begin_inset Formula $A[0,...,n-1]$
+\end_inset
+
+ are in sorted order.
+ But this is the entire array, which implies that the entire array A is
+ now sorted.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Case 2
+\series default
+: Suppose 
+\begin_inset Formula $m=1$
+\end_inset
+
+.
+ Then by the outer loop invariant, all the elements from 
+\begin_inset Formula $A[m,...,n-1]$
+\end_inset
+
+=
+\begin_inset Formula $A[1,...,n-1]$
+\end_inset
+
+ are in sorted order (if n=0 or n =1, then 
+\begin_inset Formula $A[1,...,n-1]$
+\end_inset
+
+ is just empty).
+ Note that by the outer loop invariant, all the elements in 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $A[1,...,n-1]$
+\end_inset
+
+ are 
+\begin_inset Formula $\geq$
+\end_inset
+
+ the elements in 
+\begin_inset Formula $A[m,...,m-1]=A[0]$
+\end_inset
+
+.
+ But this implies that 
+\begin_inset Formula $A[0]\leq A[1]$
+\end_inset
+
+, which means that the total array 
+\begin_inset Formula $A[0,n-1]$
+\end_inset
+
+ is also sorted.
+\end_layout
+
+\begin_layout Standard
+Overall, in either case, the outer loop terminates with a sorted list, and
+ thus the program does terminate on the correct output.
+\end_layout
+
+\begin_layout Standard
+Termination:
+\end_layout
+
+\end_body
+\end_document
