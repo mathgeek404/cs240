@@ -51,9 +51,9 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 3cm
+\leftmargin 2cm
 \topmargin 3cm
-\rightmargin 3cm
+\rightmargin 2cm
 \bottommargin 3cm
 \secnumdepth 3
 \tocdepth 3
@@ -153,7 +153,7 @@ Here, we define
 \begin_inset Formula $(i),(ii),(iii),(iv),(v)$
 \end_inset
 
- all hold.
+ of the inner loop invariants all hold.
  
 \end_layout
 
@@ -270,11 +270,7 @@ Inductive Step:
 \begin_inset Formula $0\leq k\leq i_{x}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-All elements from 
+; All elements from 
 \begin_inset Formula $A[k_{x},..,i_{x}]$
 \end_inset
 
@@ -286,23 +282,16 @@ All elements from
 \begin_inset Formula $A_{x}[0,..,(k_{x}-1)]$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-All elements from 
+; All elements from 
 \begin_inset Formula $A_{x}[k_{x},..,i_{x}]$
 \end_inset
 
- are sorted
-\end_layout
+ are sorted; 
+\begin_inset Formula $A_{x}$
+\end_inset
 
-\begin_layout Standard
-A is a permutation of the original input array
-\end_layout
-
-\begin_layout Standard
-We use the subscript x to indicate these are values after the xth iteration
+ is a permutation of the original input array.
+ We use the subscript x to indicate these are values after the xth iteration
  of the loop.
 \end_layout
 
@@ -311,7 +300,7 @@ We want to show
 \begin_inset Formula $P(x+1)$
 \end_inset
 
- holds, specifically that (i)-(v) hold for 
+ holds, specifically that (i)-(v) holds for 
 \begin_inset Formula $i_{x+1},m_{x+1},k_{x+1},A_{x+1}$
 \end_inset
 
@@ -339,7 +328,7 @@ At the beginning of the loop,
 \begin_inset Formula $i_{x+1}=i_{x}$
 \end_inset
 
-:
+):
 \end_layout
 
 \begin_layout Standard
@@ -391,10 +380,7 @@ Since we know
 \end_inset
 
  after the iteration.
-\end_layout
-
-\begin_layout Standard
-Furthermore, since 
+ Furthermore, since 
 \begin_inset Formula $k_{x+1}=i_{x}+1=i_{x+1}$
 \end_inset
 
@@ -708,6 +694,10 @@ Finally, since
 .
 \end_layout
 
+\begin_layout Standard
+Overall, we have shown the inner loop invariant conditions hold.
+\end_layout
+
 \begin_layout Section*
 Problem 3
 \end_layout
@@ -722,7 +712,7 @@ Let some
 
 \begin_layout Standard
 P(x) := After the xth iteration of the loop at (2), (i),(ii),(iii) of the
- outer loop invariabts hold.
+ outer loop invariants hold.
 \end_layout
 
 \begin_layout Standard
@@ -1055,7 +1045,7 @@ To show (iii), first recall
 \end_layout
 
 \begin_layout Standard
-To show (ii), first note that because 
+To show (ii), first note that 
 \begin_inset Formula $A_{x}[m_{x},...,(n-1)]=A_{x+1}[m_{x},...,(n-1)]$
 \end_inset
 
@@ -1068,6 +1058,33 @@ To show (ii), first note that because
 \end_inset
 
  is also sorted.
+ We also know that 
+\begin_inset Formula $A_{x+1}[k_{x+1},...,i_{x+1}]=A_{x+1}[m_{x+1},...,m_{x}-1]$
+\end_inset
+
+ is sorted.
+ Furthermore, from (iii) which we just proved, we know that all elements
+ of 
+\begin_inset Formula $A_{x+1}[m_{x},...,(n-1)]$
+\end_inset
+
+ are greater than all the elements of 
+\begin_inset Formula $A_{x+1}[m_{x+1},...,m_{x}-1]$
+\end_inset
+
+, so 
+\begin_inset Formula $A_{x+1}[m_{x}-1]\leq A_{x+1}[m_{x}]$
+\end_inset
+
+ and thus all the elements in the array 
+\begin_inset Formula $A_{x+1}[m_{x+1},...,(n-1)]$
+\end_inset
+
+ are in sorted order, thus proving (ii).
+\end_layout
+
+\begin_layout Standard
+Overall, we have shown the outer loop invariant conditions hold.
 \end_layout
 
 \begin_layout Section*
@@ -1080,10 +1097,39 @@ Partial correctness:
 
 \begin_layout Standard
 Let some 
-\begin_inset Formula $A,n$
+\begin_inset Formula $A,n\in\mathbb{N}$
 \end_inset
 
  be given.
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Since n is the length of the array, 
+\begin_inset Formula $A[0,...,n-1]$
+\end_inset
+
+ is the entire array.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
  Assume that the program terminates on this input.
  This implies that the while loop at (2) must have exited, which means that
  
@@ -1185,11 +1231,12 @@ Case 2
 \begin_inset Formula $A[0]\leq A[1]$
 \end_inset
 
-, which means that the total array 
+, which means that the array 
 \begin_inset Formula $A[0,n-1]$
 \end_inset
 
  is also sorted.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1197,8 +1244,119 @@ Overall, in either case, the outer loop terminates with a sorted list, and
  thus the program does terminate on the correct output.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Termination:
+\end_layout
+
+\begin_layout Standard
+Suppose we are given a valid input, say some 
+\begin_inset Formula $A,n\in\mathbb{N}$
+\end_inset
+
+.
+ To show termination, we need to show that both inner loops terminate across
+ all inputs.
+ First, consider the inner loop.
+ On iteration 0, 
+\begin_inset Formula $i_{0}=0$
+\end_inset
+
+, which is set on line (4).
+ On every iteration of the loop at (5), 
+\begin_inset Formula $i$
+\end_inset
+
+ is incremented by 1, so on the kth iteration 
+\begin_inset Formula $i_{k}=0+1+1...+1=k$
+\end_inset
+
+.
+ Also note that, throughout the loop, m is unchanged and by the inner loop
+ invariant, that 
+\begin_inset Formula $0\leq i\leq m-1$
+\end_inset
+
+.
+ So on the 
+\begin_inset Formula $m-1^{th}$
+\end_inset
+
+ iteration, 
+\begin_inset Formula $i_{m-1}=m-1$
+\end_inset
+
+.
+ The loop conditional 
+\begin_inset Formula $i<m-1$
+\end_inset
+
+ would be false, causing the inner loop to terminate.
+ Now we consider the outer loop at (2).
+ Notice that at the 0th iteration of this loop, 
+\begin_inset Formula $m_{0}=n$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $n=0$
+\end_inset
+
+ or 
+\begin_inset Formula $n=1$
+\end_inset
+
+, the loop conditional fails, so the loop would terminate and we are done.
+ Otherwise, on some 
+\begin_inset Formula $x^{th}$
+\end_inset
+
+ iteration of the outer loop, we know that from the inner loop invariant,
+ 
+\begin_inset Formula $0\leq k_{x}\leq i_{x}\leq m_{x}-1=m_{x-1}-1$
+\end_inset
+
+ after the inner loop executes, noting that 
+\begin_inset Formula $m_{x}=m_{x-1}$
+\end_inset
+
+ from the previous iteration at this point.
+ Then 
+\begin_inset Formula $m_{x}$
+\end_inset
+
+ is set to 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+.
+ so 
+\begin_inset Formula $0\leq m_{x}\leq m_{x-1}-1$
+\end_inset
+
+, so the value of 
+\begin_inset Formula $m_{x-1}$
+\end_inset
+
+ is decremented by atleast 1 after every iteration.
+ Because the outer loop terminates when 
+\begin_inset Formula $m\leq1$
+\end_inset
+
+, after a finite number of iteration (at most 
+\begin_inset Formula $n-1$
+\end_inset
+
+ iterations since m starts at 
+\begin_inset Formula $m_{0}=n$
+\end_inset
+
+), 
+\begin_inset Formula $m$
+\end_inset
+
+ will eventually reach the lower bound of 1.
+ Thus, the outer loop will also terminate and thus the entire program terminates
+ on any input A,n.
 \end_layout
 
 \end_body
