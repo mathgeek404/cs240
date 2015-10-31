@@ -1,0 +1,539 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\fancyhf{}               % Clear fancy header/footer
+\fancyhead[L]{Sahit Mandala, 9069858745}   % My name in Left footer
+\fancyhead[R]{CS240, Section 313}  % Page number in Right footer
+\makeatletter
+\let\ps@plain\ps@fancy   % Plain page style = fancy page style
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+CS240: Homework 6
+\end_layout
+
+\begin_layout Author
+Sahit Mandala
+\end_layout
+
+\begin_layout Section*
+Problem 1
+\end_layout
+
+\begin_layout Standard
+Partial Correctness
+\end_layout
+
+\begin_layout Standard
+Termination
+\end_layout
+
+\begin_layout Section*
+Problem 2
+\end_layout
+
+\begin_layout Subsection*
+Part a
+\end_layout
+
+\begin_layout Standard
+First, we write out the first few terms in the sequence, index starting
+ at 0.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{0}=2,A_{1}=1,A_{2}=A_{1}+2A_{0}=5,A_{3}=A_{2}+2A_{1}=7,A_{4}=A_{3}+2A_{2}=17,A_{5}=A_{4}+2A_{3}=31,A_{6}=65$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{array}{ccccccc}
+0 & 1 & 2 & 3 & 4 & 5 & 6\\
+2 & 1 & 5 & 7 & 17 & 31 & 65
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part b
+\end_layout
+
+\begin_layout Standard
+Looking at the values, we can see that after the first 2 values, the sequence
+ values are close to 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+, give or take 1.
+ With this intuition, I propose the following solution F:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F[n]=2^{n}+(-1)^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part c
+\end_layout
+
+\begin_layout Standard
+Consider the predicate 
+\begin_inset Formula $P(n):(F[n]=A_{n})$
+\end_inset
+
+.
+ We would like to show 
+\begin_inset Formula $\forall n\in\mathbb{N},P(n)$
+\end_inset
+
+, so we will use srtong induction on n.
+\end_layout
+
+\begin_layout Standard
+Base case 
+\begin_inset Formula $P(0)$
+\end_inset
+
+: We are given that 
+\begin_inset Formula $A_{0}=2$
+\end_inset
+
+ and 
+\begin_inset Formula $F[0]=2^{0}+(-1)^{0}=1+1=2$
+\end_inset
+
+, so clearly, 
+\begin_inset Formula $A_{0}=F[0]$
+\end_inset
+
+.
+ Thus, we have shown 
+\begin_inset Formula $P(0)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Strong inductive hypothesis: Next, let some 
+\begin_inset Formula $k\in\mathbb{N}$
+\end_inset
+
+ be given and suppose that 
+\begin_inset Formula $\forall i\leq k,P(k)$
+\end_inset
+
+ is true.
+ 
+\end_layout
+
+\begin_layout Standard
+We want to show 
+\begin_inset Formula $P(k+1)$
+\end_inset
+
+ is true.
+ As a trivial case, suppose that 
+\begin_inset Formula $k+1=1$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $F[k+1]=F[1]=2^{1}+(-1)^{1}=2-1=1$
+\end_inset
+
+ and we know 
+\begin_inset Formula $A_{1}=1$
+\end_inset
+
+, so clearly 
+\begin_inset Formula $P(k+1)\equiv P(1)$
+\end_inset
+
+ is true.
+\end_layout
+
+\begin_layout Standard
+Now consider the case that 
+\begin_inset Formula $k+1\neq1$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $k\in\mathbb{N}$
+\end_inset
+
+, it follows that 
+\begin_inset Formula $k\geq0$
+\end_inset
+
+ so 
+\begin_inset Formula $k+1\geq1$
+\end_inset
+
+; since 
+\begin_inset Formula $k+1\neq1$
+\end_inset
+
+, 
+\begin_inset Formula $k+1>1$
+\end_inset
+
+.
+ This means that we can utilize the relation 
+\begin_inset Formula $A_{k+1}=A_{k}+2A_{k-1}$
+\end_inset
+
+.
+ By the strong induction hypothesis, we already have 
+\begin_inset Formula $P(k),P(k-1)$
+\end_inset
+
+, noting that 
+\begin_inset Formula $k-1\geq0$
+\end_inset
+
+ in this case, so 
+\begin_inset Formula $F[k]=2^{k}+(-1)^{k}=A_{k},F[k-1]=2^{k-1}+(-1)^{k-1}=A_{k-1}$
+\end_inset
+
+.
+ Substitution reveals that: 
+\begin_inset Formula $A_{k+1}=(2^{k}+(-1)^{k})+2(2^{k-1}+(-1)^{k-1})=(2^{k}+(-1)^{k})+(2^{k}+2(-1)^{k-1})=(2^{k}+2^{k})+(-1)^{k}+2(-1)^{k-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=(2^{k}+2^{k})+(-1)(-1)^{k-1}+2(-1)^{k-1}=(2^{k+1})+(-1)^{k-1}=(2^{k+1})+(-1)(-1)(-1)^{k-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=(2^{k+1})+(-1)^{2}(-1)^{k-1}=(2^{k+1})+(-1)^{k+1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence, we have shown that 
+\begin_inset Formula $A_{k+1}=(2^{k+1})+(-1)^{k+1}=F[k+1]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 3
+\end_layout
+
+\begin_layout Subsection*
+Part a
+\end_layout
+
+\begin_layout Standard
+For 0, we are already at the final step, the 0th, so no steps can be taken.
+ Hence, there are 1 ways to take steps to get to the 0th step.
+\end_layout
+
+\begin_layout Standard
+For 1 step, the person can only take a single step to reach that 1st step,
+ and then he/she is done.
+ Hence, there is only 1 way to that 1st step.
+\end_layout
+
+\begin_layout Standard
+For 2 step, the person can only take a single 2-step to reach that 2nd step,
+ and then he/she is done.
+ The person can also take 2 1-steps to reach the top.
+ There are all possible ways to the top, so there are only 2 ways to the
+ top in this case.
+ 
+\end_layout
+
+\begin_layout Standard
+For 3 step, the person can either: take 3 1-steps, take 1 1-step and then
+ 1 2-step, or take 1 2-step and then 1 1-step.
+ Here, there are a total of 3 ways to get to the 3rd step:
+\end_layout
+
+\begin_layout Standard
+To summarize:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{array}{ccccc}
+\#Steps & 0 & 1 & 2 & 3\\
+Moves & 0 & 1 & 2 & 3
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part b
+\end_layout
+
+\begin_layout Standard
+Suppose that the person has n steps in front of them.
+ If 
+\begin_inset Formula $n=0$
+\end_inset
+
+, there is 1 way to get to that step.
+ If there is 
+\begin_inset Formula $n=1$
+\end_inset
+
+ steps in front of them, there is only 1 way to the 1st step.
+ For 
+\begin_inset Formula $n\geq1$
+\end_inset
+
+, the person can either take a 1-step or 2-step.
+ If they take a 1-step, there are n-1 steps to go.
+ If they take a 2-step, they have n-2 steps to go.
+ The number of ways to the top step n can be marginalized on these 2 decisions
+ potential: # for steps n = # of ways to 1-step * # of ways to get n-1 steps
+ + # of ways to 2-step * number of ways for n-2 steps.
+ In recurrence form, noting the cases 
+\begin_inset Formula $n=1,n=2$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{n}=A_{n-1}+A_{n-2}$
+\end_inset
+
+,
+\begin_inset Formula $A_{0}=1$
+\end_inset
+
+,
+\begin_inset Formula $A_{1}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part c
+\end_layout
+
+\begin_layout Standard
+In our case, we see that 
+\begin_inset Formula $c_{1}=c_{2}=1$
+\end_inset
+
+, so the quadratic equation becomes 
+\begin_inset Formula $r^{2}-r-1$
+\end_inset
+
+.
+ The roots of the equation, by the quadratic formula, are: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}=\frac{1\pm\sqrt{1-4(-1)}}{2}=\frac{1\pm\sqrt{5}}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So we have roots 
+\begin_inset Formula $r_{1}=\frac{1+\sqrt{5}}{2},r_{2}=\frac{1-\sqrt{5}}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So the closed form of this reccurence relation is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{n}=\alpha(\frac{1+\sqrt{5}}{2})^{n}+\beta(\frac{1-\sqrt{5}}{2})^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Solving for 
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+, we shall utilize 
+\begin_inset Formula $A_{1}=1,A_{2}=2$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{0}=\alpha(\frac{1+\sqrt{5}}{2})^{0}+\beta(\frac{1-\sqrt{5}}{2})^{0}=1\rightarrow\alpha+\beta=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{1}=\alpha(\frac{1+\sqrt{5}}{2})^{2}+\beta(\frac{1-\sqrt{5}}{2})^{1}=1\rightarrow\alpha(1+\sqrt{5})^{1}+\beta(1-\sqrt{5})^{1}=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha(1+\sqrt{5})^{1}+\beta(1-\sqrt{5})^{1}-\alpha+\beta=\alpha\sqrt{5}-\beta\sqrt{5}=2-1=1\rightarrow\alpha-\beta=\frac{1}{\sqrt{5}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\alpha+\beta+\alpha-\beta}{2}=\alpha=(1+\frac{1}{\sqrt{5}})/2$
+\end_inset
+
+,
+\begin_inset Formula $\beta=1-\alpha=1-(1+\frac{1}{\sqrt{5}})/2=(1-\frac{1}{\sqrt{5}})/2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{n}=(1+\frac{1}{\sqrt{5}})/2(\frac{1+\sqrt{5}}{2})^{n}+(1-\frac{1}{\sqrt{5}})/2(\frac{1-\sqrt{5}}{2})^{n}=(\frac{1+\sqrt{5}}{2\sqrt{5}})(\frac{1+\sqrt{5}}{2})^{n}-(\frac{1-\sqrt{5}}{2\sqrt{5}})(\frac{1-\sqrt{5}}{2})^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=(\frac{1}{\sqrt{5}})(\frac{1+\sqrt{5}}{2})^{n+1}-(\frac{1}{\sqrt{5}})(\frac{1-\sqrt{5}}{2})^{n+1}=(\frac{1}{\sqrt{5}})(\frac{(1+\sqrt{5})^{n+1}-(1-\sqrt{5})^{n+1}}{2^{n+1}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence, we have found a closed form for the sequence:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{n}=(\frac{1}{\sqrt{5}})(\frac{(1+\sqrt{5})^{n+1}-(1-\sqrt{5})^{n+1}}{2^{n+1}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Part d
+\end_layout
+
+\begin_layout Standard
+Using our formula at 8,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{8}=(\frac{1}{\sqrt{5}})(\frac{(1+\sqrt{5})^{8+1}-(1-\sqrt{5})^{8+1}}{2^{8+1}})=(\frac{1}{\sqrt{5}})(\frac{(1+\sqrt{5})^{9}-(1-\sqrt{5})^{9}}{2^{9}})=(0.4472)(\frac{(38918.73)-(-6.7356)}{512})=33.998\approx34$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Hence, there are 34 ways of traversing 8 steps.
+\end_layout
+
+\end_body
+\end_document
