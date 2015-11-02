@@ -93,12 +93,595 @@ Sahit Mandala
 Problem 1
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Partial Correctness
 \end_layout
 
 \begin_layout Standard
+Let 
+\begin_inset Formula $a,b$
+\end_inset
+
+ be valid inputs on the program.
+ We will consider several exhausive cases to show that this program returns
+ the correct output (i.e.
+ 
+\begin_inset Formula $a^{b}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Case 1
+\series default
+: 
+\begin_inset Formula $b=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this cases, we know that 
+\begin_inset Formula $a^{b}=a^{1}=a$
+\end_inset
+
+.
+ Since the conditional at (1) is satisfies, we do return 
+\begin_inset Formula $a$
+\end_inset
+
+ as the solution, as expected.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Case 2
+\series default
+: 
+\begin_inset Formula $b\neq1$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ is odd
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $b\neq1$
+\end_inset
+
+, we skip the conditional at line (1) and execute (2) as part of the else
+ statement.
+ That is, we run 
+\begin_inset Formula $r=FastPower(a,\lfloor\frac{b}{2}\rfloor)$
+\end_inset
+
+.
+ In this case, since 
+\begin_inset Formula $b\in\mathbb{Z}^{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $b\neq1$
+\end_inset
+
+, we know that 
+\begin_inset Formula $2\leq b$
+\end_inset
+
+.
+ Since b is odd, we can further infer that 
+\begin_inset Formula $b\neq2$
+\end_inset
+
+, so 
+\begin_inset Formula $3\leq b$
+\end_inset
+
+.
+ Alse, we can choose some 
+\begin_inset Formula $k\in\mathbb{Z}$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $b=2k+1$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $3\leq b=2k+1$
+\end_inset
+
+ so 
+\begin_inset Formula $2\leq2k$
+\end_inset
+
+ and thus 
+\begin_inset Formula $1\leq k$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula $k\in\mathbb{Z}^{+}\subset\mathbb{Z}$
+\end_inset
+
+.
+ Notice that 
+\begin_inset Formula $\lfloor\frac{b}{2}\rfloor=\lfloor\frac{2k+1}{2}\rfloor=\lfloor k+\frac{1}{2}\rfloor=\lfloor k\rfloor=k$
+\end_inset
+
+, noting that k is an integer while 
+\begin_inset Formula $1/2$
+\end_inset
+
+ is just a decimal.
+ So 
+\begin_inset Formula $r=FastPower(a,\lfloor\frac{b}{2}\rfloor)=FastPower(a,k)$
+\end_inset
+
+, and since 
+\begin_inset Formula $a\in\mathbb{Z},a\neq0$
+\end_inset
+
+ (as given) and 
+\begin_inset Formula $k\in\mathbb{Z}^{+}$
+\end_inset
+
+, we know that 
+\begin_inset Formula $FastPower(a,k)=a^{k}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $r=a^{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now we consider line (3).
+ Since we know 
+\begin_inset Formula $b$
+\end_inset
+
+ is odd, the conditional triggers, so we return 
+\begin_inset Formula $a*r*r$
+\end_inset
+
+.
+ Note that 
+\begin_inset Formula $a*r*r=a*a^{k}*a^{k}=a*a^{2k}=a^{2k+1}=a^{b}$
+\end_inset
+
+, recalling that 
+\begin_inset Formula $2k+1=b$
+\end_inset
+
+.
+ Hence, in this case, we in fact return the correct solution, 
+\begin_inset Formula $a^{b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Case 2:
+\series default
+ 
+\begin_inset Formula $b\neq1$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ is even
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $b\neq1$
+\end_inset
+
+, we skip the conditional at line (1) and execute (2) as part of the else
+ statement.
+ That is, we run 
+\begin_inset Formula $r=FastPower(a,\lfloor\frac{b}{2}\rfloor)$
+\end_inset
+
+.
+ In this case, since 
+\begin_inset Formula $b\in\mathbb{Z}^{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $b\neq1$
+\end_inset
+
+, we know that 
+\begin_inset Formula $2\leq b$
+\end_inset
+
+.
+ Since b is even, we can choose some 
+\begin_inset Formula $k\in\mathbb{Z}$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $b=2k$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $2\leq b=2k$
+\end_inset
+
+, so 
+\begin_inset Formula $1\leq k$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula $k\in\mathbb{Z}^{+}\subset\mathbb{Z}$
+\end_inset
+
+.
+ Notice that 
+\begin_inset Formula $\lfloor\frac{b}{2}\rfloor=\lfloor\frac{2k}{2}\rfloor=\lfloor k\rfloor=k$
+\end_inset
+
+, noting that k is an integer.
+ So 
+\begin_inset Formula $r=FastPower(a,\lfloor\frac{b}{2}\rfloor)=FastPower(a,k)$
+\end_inset
+
+, and since 
+\begin_inset Formula $a\in\mathbb{Z},a\neq0$
+\end_inset
+
+ (as given) and 
+\begin_inset Formula $k\in\mathbb{Z}^{+}$
+\end_inset
+
+, we know that 
+\begin_inset Formula $FastPower(a,k)=a^{k}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $r=a^{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now we consider line (3) and (4).
+ Since we know 
+\begin_inset Formula $b$
+\end_inset
+
+ is even, so the conditional at (3) fails so we execute the else statement
+ at (4); so we return 
+\begin_inset Formula $r*r$
+\end_inset
+
+.
+ Note that 
+\begin_inset Formula $r*r=a^{k}*a^{k}=a^{2k}=a^{b}$
+\end_inset
+
+, recalling that 
+\begin_inset Formula $2k=b$
+\end_inset
+
+.
+ Hence, in this case, we in fact return the correct solution, 
+\begin_inset Formula $a^{b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Hence, we have exhaused all cases on 
+\begin_inset Formula $b$
+\end_inset
+
+ to show that when the program terminates, it returns the correct output
+ on valid input.
+\end_layout
+
+\begin_layout Subsection*
 Termination
+\end_layout
+
+\begin_layout Standard
+Let some arbitrary 
+\begin_inset Formula $a\in\mathbb{Z},a\neq0$
+\end_inset
+
+ be given.
+ To prove termination, we shall use proof by induction on 
+\begin_inset Formula $b$
+\end_inset
+
+ to show 
+\begin_inset Formula $P(b):$
+\end_inset
+
+ 
+\begin_inset Formula $FastPower(a,b)$
+\end_inset
+
+ terminates.
+\end_layout
+
+\begin_layout Standard
+First, consider the base case 
+\begin_inset Formula $b=1$
+\end_inset
+
+ (noting that 
+\begin_inset Formula $b\in\mathbb{Z}^{+}$
+\end_inset
+
+).
+ During the execution of the program, we first trigger the conditional on
+ line (1) since 
+\begin_inset Formula $b=1$
+\end_inset
+
+ and thus return a, terminating the program.
+ Hence, we have shown 
+\begin_inset Formula $P(1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Next, assume the strong inductive hypothesis for some 
+\begin_inset Formula $k\in\mathbb{N}$
+\end_inset
+
+ with 
+\begin_inset Formula $1\leq k$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula $\forall x\in\mathbb{N}$
+\end_inset
+
+ with 
+\begin_inset Formula $1\leq x\leq k$
+\end_inset
+
+,
+\begin_inset Formula $P(x)$
+\end_inset
+
+.
+ Or equivalently, for 
+\begin_inset Formula $\forall x\in\mathbb{N}$
+\end_inset
+
+ with 
+\begin_inset Formula $1\leq x\leq k$
+\end_inset
+
+, 
+\begin_inset Formula $FastPower(a,x)$
+\end_inset
+
+ terminates.
+ 
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $FastPower(a,k+1)$
+\end_inset
+
+.
+ We know that 
+\begin_inset Formula $1\leq k$
+\end_inset
+
+, so 
+\begin_inset Formula $2\leq k+1\neq1$
+\end_inset
+
+; hence, we skip the statement at line (1).
+ Now consider 2 cases:
+\end_layout
+
+\begin_layout Standard
+Case 1: 
+\begin_inset Formula $k+1$
+\end_inset
+
+ is odd
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $k+1$
+\end_inset
+
+ is odd, we can further infer that 
+\begin_inset Formula $k+1\neq2$
+\end_inset
+
+, so 
+\begin_inset Formula $3\leq k+1$
+\end_inset
+
+.
+ Also, we can choose some 
+\begin_inset Formula $m\in\mathbb{Z}$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $k+1=2m+1$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $3\leq k+1=2m+1$
+\end_inset
+
+ so 
+\begin_inset Formula $2\leq k=2m$
+\end_inset
+
+.
+ This implies that 
+\begin_inset Formula $1\leq m$
+\end_inset
+
+ and 
+\begin_inset Formula $m\leq k$
+\end_inset
+
+.
+ Notice that 
+\begin_inset Formula $\lfloor\frac{k+1}{2}\rfloor=\lfloor\frac{2m+1}{2}\rfloor=\lfloor m+\frac{1}{2}\rfloor=\lfloor m\rfloor=m$
+\end_inset
+
+, noting that m is an integer while 
+\begin_inset Formula $1/2$
+\end_inset
+
+ is just a decimal.
+ So 
+\begin_inset Formula $FastPower(a,\lfloor\frac{k+1}{2}\rfloor)=FastPower(a,m)$
+\end_inset
+
+, and since 
+\begin_inset Formula $1\leq m\leq k$
+\end_inset
+
+, we know that 
+\begin_inset Formula $FastPower(a,m)$
+\end_inset
+
+ terminates by the inductive hypothesis.
+ Hence, line (2) of the program terminates.
+ 
+\end_layout
+
+\begin_layout Standard
+Now we consider line (3).
+ Since we know 
+\begin_inset Formula $k+1$
+\end_inset
+
+ is odd, the conditional triggers at (3) triggers and we return a value,
+ causing the program to terminate.
+\end_layout
+
+\begin_layout Standard
+Case 2: 
+\begin_inset Formula $k+1$
+\end_inset
+
+ is even
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $k+1$
+\end_inset
+
+ is even, 
+\begin_inset Formula $2\leq k+1$
+\end_inset
+
+.
+ Also, we can choose some 
+\begin_inset Formula $m\in\mathbb{Z}$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $k+1=2m$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $2\leq k+1=2m$
+\end_inset
+
+ so 
+\begin_inset Formula $2\leq k+1=2m$
+\end_inset
+
+.
+ This implies that 
+\begin_inset Formula $1\leq m$
+\end_inset
+
+.
+ Also note that because 
+\begin_inset Formula $k-m=m-1$
+\end_inset
+
+ and 
+\begin_inset Formula $1\leq m\rightarrow0\leq m-1$
+\end_inset
+
+ from above, we see that 
+\begin_inset Formula $m\leq k$
+\end_inset
+
+.
+ Notice that 
+\begin_inset Formula $\lfloor\frac{k+1}{2}\rfloor=\lfloor\frac{2m}{2}\rfloor=\lfloor m\rfloor=m$
+\end_inset
+
+, noting that m is an integer.
+ So 
+\begin_inset Formula $FastPower(a,\lfloor\frac{k+1}{2}\rfloor)=FastPower(a,m)$
+\end_inset
+
+, and since 
+\begin_inset Formula $1\leq m\leq k$
+\end_inset
+
+, we know that 
+\begin_inset Formula $FastPower(a,m)$
+\end_inset
+
+ terminates by the inductive hypothesis.
+ Hence, line (2) of the program terminates.
+ 
+\end_layout
+
+\begin_layout Standard
+Now we consider line (3).
+ Since we know 
+\begin_inset Formula $k+1$
+\end_inset
+
+ is odd, the conditional triggers at (3) triggers and we return a value,
+ causing the program to terminate.
 \end_layout
 
 \begin_layout Section*
@@ -521,10 +1104,18 @@ Part d
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $A_{8}=(\frac{1}{\sqrt{5}})(\frac{(1+\sqrt{5})^{8+1}-(1-\sqrt{5})^{8+1}}{2^{8+1}})=(\frac{1}{\sqrt{5}})(\frac{(1+\sqrt{5})^{9}-(1-\sqrt{5})^{9}}{2^{9}})$
+Using our formula at 8,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{8}=(\frac{1}{\sqrt{5}})(\frac{(1+\sqrt{5})^{8+1}-(1-\sqrt{5})^{8+1}}{2^{8+1}})=(\frac{1}{\sqrt{5}})(\frac{(1+\sqrt{5})^{9}-(1-\sqrt{5})^{9}}{2^{9}})=(0.4472)(\frac{(38918.73)-(-6.7356)}{512})=33.998\approx34$
 \end_inset
 
+.
+\end_layout
 
+\begin_layout Standard
+Hence, there are 34 ways of traversing 8 steps.
 \end_layout
 
 \end_body

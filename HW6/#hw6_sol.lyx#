@@ -512,11 +512,7 @@ Consider
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Case 1
-\series default
-: 
+Case 1: 
 \begin_inset Formula $k+1$
 \end_inset
 
@@ -575,7 +571,7 @@ Since
 
  is just a decimal.
  So 
-\begin_inset Formula $FastPower(a,\lfloor\frac{k+1}{2}\rfloor)=FastPower(a,m)$
+\begin_inset Formula $FastPower(a,\lfloor\frac{b}{2}\rfloor)=FastPower(a,m)$
 \end_inset
 
 , and since 
@@ -602,11 +598,7 @@ Now we consider line (3).
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Case 2
-\series default
-: 
+Case 2: 
 \begin_inset Formula $k+1$
 \end_inset
 
@@ -618,8 +610,12 @@ Since
 \begin_inset Formula $k+1$
 \end_inset
 
- is even, 
-\begin_inset Formula $2\leq k+1$
+ is odd, we can further infer that 
+\begin_inset Formula $k+1\neq2$
+\end_inset
+
+, so 
+\begin_inset Formula $3\leq k+1$
 \end_inset
 
 .
@@ -629,16 +625,16 @@ Since
 
  s.t.
  
-\begin_inset Formula $k+1=2m$
+\begin_inset Formula $k+1=2m+1$
 \end_inset
 
 .
  But 
-\begin_inset Formula $2\leq k+1=2m$
+\begin_inset Formula $3\leq k+1=2m+1$
 \end_inset
 
  so 
-\begin_inset Formula $2\leq k+1=2m$
+\begin_inset Formula $2\leq k=2m$
 \end_inset
 
 .
@@ -646,27 +642,22 @@ Since
 \begin_inset Formula $1\leq m$
 \end_inset
 
-.
- Also note that because 
-\begin_inset Formula $k-m=m-1$
-\end_inset
-
  and 
-\begin_inset Formula $1\leq m\rightarrow0\leq m-1$
-\end_inset
-
- from above, we see that 
 \begin_inset Formula $m\leq k$
 \end_inset
 
 .
  Notice that 
-\begin_inset Formula $\lfloor\frac{k+1}{2}\rfloor=\lfloor\frac{2m}{2}\rfloor=\lfloor m\rfloor=m$
+\begin_inset Formula $\lfloor\frac{k+1}{2}\rfloor=\lfloor\frac{2m+1}{2}\rfloor=\lfloor m+\frac{1}{2}\rfloor=\lfloor m\rfloor=m$
 \end_inset
 
-, noting that m is an integer.
+, noting that m is an integer while 
+\begin_inset Formula $1/2$
+\end_inset
+
+ is just a decimal.
  So 
-\begin_inset Formula $FastPower(a,\lfloor\frac{k+1}{2}\rfloor)=FastPower(a,m)$
+\begin_inset Formula $FastPower(a,\lfloor\frac{b}{2}\rfloor)=FastPower(a,m)$
 \end_inset
 
 , and since 
@@ -683,51 +674,13 @@ Since
 \end_layout
 
 \begin_layout Standard
-Now we consider line (3) and (4).
+Now we consider line (3).
  Since we know 
 \begin_inset Formula $k+1$
 \end_inset
 
- is even, the conditional at (3) fails but triggers (4).
- Here, we return a value, causing the program to terminate.
-\end_layout
-
-\begin_layout Standard
-We have exhausted all cases on 
-\begin_inset Formula $k+1$
-\end_inset
-
- to show that the program 
-\begin_inset Formula $FastPower(a,k+1)$
-\end_inset
-
- does terminate.
- Hence, by strong induction, we have shown 
-\begin_inset Formula $FastPower(a,b)$
-\end_inset
-
- terminates for all 
-\begin_inset Formula $b\in\mathbb{N}$
-\end_inset
-
- with 
-\begin_inset Formula $b\geq1$
-\end_inset
-
- (or equivalently, 
-\begin_inset Formula $b\in\mathbb{Z}^{+}$
-\end_inset
-
-).
- And since 
-\begin_inset Formula $a$
-\end_inset
-
- was arbitrarily given as a valid input earlier, we see that 
-\begin_inset Formula $FastPower(a,b)$
-\end_inset
-
- terminates on all valid input
+ is odd, the conditional triggers at (3) triggers and we return a value,
+ causing the program to terminate.
 \end_layout
 
 \begin_layout Section*
