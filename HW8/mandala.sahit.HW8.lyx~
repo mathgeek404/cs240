@@ -803,6 +803,7 @@ R is not a total order relation on A.
 \end_inset
 
 .
+ This breaks the definition of total order.
  
 \end_layout
 

@@ -211,7 +211,11 @@ Part b)
 \end_layout
 
 \begin_layout Standard
-i) Suppose that 
+i) 
+\end_layout
+
+\begin_layout Standard
+Suppose that 
 \begin_inset Formula $R_{1}=\{(1,2),(2,1),(1,1),(2,2),(3,3)\}$
 \end_inset
 
@@ -338,7 +342,11 @@ Now consider
 \end_layout
 
 \begin_layout Standard
-ii) Consider some relations 
+ii) 
+\end_layout
+
+\begin_layout Standard
+Consider some relations 
 \begin_inset Formula $R_{1}\cap R_{1}$
 \end_inset
 
@@ -803,6 +811,7 @@ R is not a total order relation on A.
 \end_inset
 
 .
+ This breaks the definition of total order.
  
 \end_layout
 
