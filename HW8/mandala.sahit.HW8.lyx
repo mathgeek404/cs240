@@ -923,6 +923,84 @@ Problem 3
 Part a)
 \end_layout
 
+\begin_layout Standard
+Consider the relation on strict equality 
+\begin_inset Quotes eld
+\end_inset
+
+=
+\begin_inset Quotes erd
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula $(a,b)\in R$
+\end_inset
+
+ if 
+\begin_inset Formula $a=b$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $R=\{(a,a),(b,b),(c,c),(d,d),(e,e)\}$
+\end_inset
+
+.
+ Trivially, the relation satisfies reflexivity and symmetry (every pair
+ is its own symmetric counter part).
+ Transitivity is always preserved since 
+\begin_inset Formula $xRx,xRx\rightarrow xRx$
+\end_inset
+
+ trivially (for all 
+\begin_inset Formula $x\in A$
+\end_inset
+
+).
+ So this relation is an equivalence relation.
+ To show it is an order relation, we need to show that it is antisymmetric
+ (we already showed transitivity).
+ But, for any 
+\begin_inset Formula $a,b\in A$
+\end_inset
+
+, we know that when 
+\begin_inset Formula $a\neq b$
+\end_inset
+
+, it follows that 
+\begin_inset Formula $aRb\wedge bRa$
+\end_inset
+
+ is always false, since none of our pairs contain 2 distinct elements so
+ 
+\begin_inset Formula $(a,b)\not\in R$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula $a\neq b\rightarrow\neg(aRb\wedge bRa)$
+\end_inset
+
+.
+ By the contrapositive, this shows that 
+\begin_inset Formula $aRb\wedge bRa\rightarrow a=b$
+\end_inset
+
+, which shows antisymmetry.
+ So R is a order relation as well.
+\end_layout
+
+\begin_layout Standard
+The equivalence classes on R are just the singleton sets of each element,
+ so 
+\begin_inset Formula $[a]=\{a\},[b]=\{b\},[c]=\{c\},[d]=\{d\},[e]=\{e\}$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection*
 Part b)
 \end_layout
@@ -964,6 +1042,75 @@ Putting these together, our relation R =
 Part c)
 \end_layout
 
+\begin_layout Standard
+i) Consider the subsets
+\begin_inset Formula $\{a\},\{a,b\}$
+\end_inset
+
+.
+ Notice that 
+\begin_inset Formula $|\{a\}|=1\leq2=|\{a,b\}|$
+\end_inset
+
+, so
+\begin_inset Formula $\{a\}R\{a,b\}$
+\end_inset
+
+.
+ However, 
+\begin_inset Formula $|\{a,b\}|=2\not\leq1=|\{a\}|$
+\end_inset
+
+, so 
+\begin_inset Formula $(\{b,a\},\{a\})\not\in R$
+\end_inset
+
+.
+ This violates symmetry, so R is not an equivalence relation.
+\end_layout
+
+\begin_layout Standard
+ii)
+\end_layout
+
+\begin_layout Standard
+R is not an order relation.
+ Consider the subsets 
+\begin_inset Formula $\{a,c\},\{a,b\}$
+\end_inset
+
+.
+ Notice that 
+\begin_inset Formula $|\{a,c\}|=2=|\{a,b\}|$
+\end_inset
+
+, so 
+\begin_inset Formula $|\{a,c\}|\leq|\{a,b\}|$
+\end_inset
+
+ and 
+\begin_inset Formula $|\{a,c\}|\geq|\{a,b\}|$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\{a,c\}R\{a,b\}$
+\end_inset
+
+ and 
+\begin_inset Formula $\{a,b\}R\{a,c\}\in R$
+\end_inset
+
+.
+ However, we see that 
+\begin_inset Formula $\{a,c\}\neq\{a,b\}$
+\end_inset
+
+, which violates the antisymmetric property.
+ So R is not an order relation either.
+ 
+\end_layout
+
 \begin_layout Section*
 Problem 4
 \end_layout
@@ -992,6 +1139,59 @@ Not a bijection.
 
 \begin_layout Subsection*
 Part b)
+\end_layout
+
+\begin_layout Standard
+Yes.
+ We utilize the fact that 
+\begin_inset Formula $g(x)=\sqrt[5]{x}$
+\end_inset
+
+ is a well defined function defined on all of 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ (which technically follows from the fact that 
+\begin_inset Formula $x^{5}$
+\end_inset
+
+ is invertable on all 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+).
+ Suppose that for some 
+\begin_inset Formula $x,y$
+\end_inset
+
+ that 
+\begin_inset Formula $x^{5}+1=y^{5}+1$
+\end_inset
+
+.
+ So then 
+\begin_inset Formula $x^{5}=y^{5}$
+\end_inset
+
+, and by applyting the 5th root, we see that 
+\begin_inset Formula $\sqrt[5]{x^{5}}=x=y=\sqrt[5]{y^{5}}$
+\end_inset
+
+, which implies injectivity.
+ Furthermore, for arbitrary 
+\begin_inset Formula $x\in\mathbb{R}$
+\end_inset
+
+, we can construct 
+\begin_inset Formula $\sqrt[5]{x-1}$
+\end_inset
+
+ and see that 
+\begin_inset Formula $f(\sqrt[5]{x-1})=(\sqrt[5]{x-1})^{5}+1=x-1+1=x$
+\end_inset
+
+, so the function is also surjectively.
+ Hence, it is bijective.
 \end_layout
 
 \begin_layout Subsection*
