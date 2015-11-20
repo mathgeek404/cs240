@@ -791,7 +791,7 @@ R is not a total order relation on A.
 
 .
  Notice that 
-\begin_inset Formula $\{2,4\},\{3,4\}$
+\begin_inset Formula $\{2,4\}\neq\{3,4\}\in$
 \end_inset
 
  but 
@@ -1151,7 +1151,15 @@ Yes.
 \begin_inset Formula $\mathbb{R}$
 \end_inset
 
-.
+ (which technically follows from the fact that 
+\begin_inset Formula $x^{5}$
+\end_inset
+
+ is invertable on all 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+).
  Suppose that for some 
 \begin_inset Formula $x,y$
 \end_inset
