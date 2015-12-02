@@ -1,0 +1,519 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Problem 1
+\end_layout
+
+\begin_layout Standard
+Consider the relation R on V defined by mutual reachability.
+ Suppose that 
+\begin_inset Formula $uRv$
+\end_inset
+
+ and 
+\begin_inset Formula $vRw$
+\end_inset
+
+ for some u,v,w in V.
+ We want to show that R is an equivalence relation.
+ 
+\end_layout
+
+\begin_layout Standard
+Symmetric: For any x in V, notice that xRx since any node x is reachable
+ from itself, x, using the trivial path with no edges ; hence, x is mutually
+ reachable from x, so xRx, proving R is symmetric.
+ 
+\end_layout
+
+\begin_layout Standard
+Reflexivity: Consider uRv.
+ That is, u is mutually reachable from v.
+ So there exists a directed path from u to v and a directed path from v
+ to u.
+ From this, it trivially follows from the definition that v is mutually
+ reachable from u, so vRu, proving R is reflexive.
+ 
+\end_layout
+
+\begin_layout Standard
+Transitivity: Consider uRv and vRw.
+ Then we know that u and v as well as v and w are each mutually reachable.
+ So we know there exists a directed path from u to v, say 
+\begin_inset Formula $P1=(u,x_{1}),...,(x_{n},v)$
+\end_inset
+
+, and a directed path from v to w, say 
+\begin_inset Formula $P2=(v,y_{1}),...,(y_{m},w)$
+\end_inset
+
+.
+ Now consider the path 
+\begin_inset Formula $P_{3}$
+\end_inset
+
+ constructed by appending 
+\begin_inset Formula $P_{2}$
+\end_inset
+
+ to 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+ (.e.g.
+ 
+\begin_inset Formula $P_{3}=P_{1}\cup P_{2}=((u,x_{1}),...,(x_{n},v),(v,y_{1}),...,(y_{m},w)$
+\end_inset
+
+).
+ 
+\begin_inset Formula $P_{3}$
+\end_inset
+
+ is a directed path from u to w, which shows that w is reachable from u.
+ Similarly, we know there exists a directed path from v to u, say 
+\begin_inset Formula $P_{1}=((v,x_{1}),...,(x_{n},u))$
+\end_inset
+
+, and a directed path from w to v, say 
+\begin_inset Formula $P2=((w,y_{1}),...,(y_{m},v))$
+\end_inset
+
+.
+ Now consider the path 
+\begin_inset Formula $P_{3}$
+\end_inset
+
+ constructed by appending 
+\begin_inset Formula $P_{2}$
+\end_inset
+
+ to 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+ (.e.g.
+ 
+\begin_inset Formula $P_{3}=P_{1}\cup P_{2}=((w,x_{1}),...,(x_{n},v),(v,y_{1}),...,(y_{m},u))$
+\end_inset
+
+.
+ 
+\begin_inset Formula $P_{3}$
+\end_inset
+
+ is a directed path from w to u, which shows that u is reachable from w.
+ Hence, overall, we have show that u is mutually reachable to w, so uRw,
+ showing reflexivity.
+ 
+\end_layout
+
+\begin_layout Section*
+Problem 2
+\end_layout
+
+\begin_layout Standard
+Let some 
+\begin_inset Formula $G=(V,E_{G})$
+\end_inset
+
+,
+\begin_inset Formula $H=(V,E_{H})$
+\end_inset
+
+ be given as defined in the problem.
+ If G is connected, we are done, so now suppose that G is not connected.
+ We want to show now that H is connected.
+ So let some 
+\begin_inset Formula $u,v\in V$
+\end_inset
+
+ be given with 
+\begin_inset Formula $u\neq v$
+\end_inset
+
+.
+ There are 2 cases we will consider:
+\end_layout
+
+\begin_layout Standard
+Case 1: u,v were not connected in G
+\end_layout
+
+\begin_layout Standard
+This implies that there is no edge 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ in G, or they would be connected in G.
+ Hence, since 
+\begin_inset Formula $u\neq v$
+\end_inset
+
+ and 
+\begin_inset Formula $(u,v)\not\in E_{G}$
+\end_inset
+
+, 
+\begin_inset Formula $(u,v)\in E_{H}$
+\end_inset
+
+.
+ Hence, u and v are clearly connected in H.
+\end_layout
+
+\begin_layout Standard
+Case 2: u,v were connected in G
+\end_layout
+
+\begin_layout Standard
+In this case, consider 
+\begin_inset Formula $u$
+\end_inset
+
+.
+ Because G is not completely connected, we can choose some vertex 
+\begin_inset Formula $x\neq u\in V$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $u$
+\end_inset
+
+ is not connected to 
+\begin_inset Formula $x$
+\end_inset
+
+ in G.
+ So clearly, there is no edge from u to x, so 
+\begin_inset Formula $(u,x)\not\in E_{G}$
+\end_inset
+
+; hence, 
+\begin_inset Formula $(u,x)\in$
+\end_inset
+
+.
+ Furthermore, we can see that v is not connected to 
+\begin_inset Formula $x$
+\end_inset
+
+ in G since, if x is connected to v, it follows that u would also be connected
+ to x (since we can then construct an aggregated path from u to v and then
+ v to x), cng ontradicted our definition on x.
+ So v is not connected to x in G, implying there is no edge from v to x
+ in G, so 
+\begin_inset Formula $(v,x)\not\in E_{G}$
+\end_inset
+
+.
+ Hence
+\end_layout
+
+\begin_layout Section*
+Problem 3 
+\end_layout
+
+\begin_layout Subsection*
+Part a
+\end_layout
+
+\begin_layout Standard
+See attached
+\end_layout
+
+\begin_layout Subsection*
+Part b
+\end_layout
+
+\begin_layout Standard
+i)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{n}$
+\end_inset
+
+ always has
+\bar under
+ n vertices
+\bar default
+.
+ As for edges, we make it a counting problem.
+ The first node is connected to 
+\begin_inset Formula $n-1$
+\end_inset
+
+ nodes, so we can count 
+\begin_inset Formula $n-1$
+\end_inset
+
+ edges out of the first node.
+ The second node also has 
+\begin_inset Formula $n-1$
+\end_inset
+
+ vertices out of it, but we already counted the one to the first node.
+ So there are 
+\begin_inset Formula $n-1-1=n-2$
+\end_inset
+
+ distinct edges from the second node.
+ Again, the 3rd has 
+\begin_inset Formula $n-1-2=n-3$
+\end_inset
+
+ distinct edges, ignoring the edges to the 1st, 2nd node.
+ If we continued this and summed up all the distinct nodes, we see that
+ the total is 
+\begin_inset Formula $n-1+n-2+n-3+...+1+0=\frac{n(n-1)}{2}$
+\end_inset
+
+ edges.
+ So there are 
+\begin_inset Formula $\frac{n(n-1)}{2}$
+\end_inset
+
+ edges.
+\end_layout
+
+\begin_layout Standard
+ii)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{n,m}$
+\end_inset
+
+ has 2 separate subsets with n and m elements respectively, so there are
+ a total of 
+\begin_inset Formula $n+m$
+\end_inset
+
+ verticies.
+ 
+\end_layout
+
+\begin_layout Standard
+We know that every node in the first subset (n elements) is connected to
+ every element in the other subset (with m elements).
+ So each of the n elements in the first subset has m edges, one to each
+ of the m elements in the other subset.
+ So the total number of edges is 
+\begin_inset Formula $m*n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+iii)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C_{n}$
+\end_inset
+
+ has
+\bar under
+ n vertices
+\bar default
+ by construction.
+ Furthermore, we know that by construction of the edges 
+\begin_inset Formula $\{v_{1},v_{2}\},\{v_{2},v_{3}\},...,\{v_{n-1},v_{n}\},\{v_{n},v_{1}\}$
+\end_inset
+
+ that we can assign each edge to a vertices by considering the 
+\begin_inset Quotes eld
+\end_inset
+
+first
+\begin_inset Quotes erd
+\end_inset
+
+ vertex on the edge.
+ So we can pair off 
+\begin_inset Formula $v_{1}\rightarrow\{v_{1},v_{2}\},v_{2}\rightarrow\{v_{2},v_{3}\},...,v_{n-1}\rightarrow\{v_{n-1},v_{n}\},v_{n}\rightarrow\{v_{n},v_{1}\}$
+\end_inset
+
+.
+ By the definition's construction of edges, every vertex appears once as
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+starting
+\begin_inset Quotes erd
+\end_inset
+
+ vertex for exactly one edge, making this a bijective pairing.
+ Point it, there are the same number of edges as vertices, so there are
+ also 
+\bar under
+n edges.
+\end_layout
+
+\begin_layout Section*
+Problem 4
+\end_layout
+
+\begin_layout Subsection*
+Part a
+\end_layout
+
+\begin_layout Standard
+(FWGC,0) (FWG,C) (FWC,G) (FGC,W) (FG,WC)
+\end_layout
+
+\begin_layout Standard
+(0, FWGC) (C, FWG) (G, FWC) (W, FGC) (WC, FG)
+\end_layout
+
+\begin_layout Subsection*
+Part b
+\end_layout
+
+\begin_layout Standard
+See attached
+\end_layout
+
+\begin_layout Subsection*
+Part c
+\end_layout
+
+\begin_layout Standard
+Every node in the graph corresponds to an allowable state in the puzzle
+ by construction from part a.
+ Furthermore, every edge (u,v) corresponds to an allowable moves in the
+ puzzle, where the farmer can make a particular trip to switch from state
+ u to state v (or vice versa).
+ (FWGC,0) corresponds to the starting state (everyone on one side of the
+ river, wanting to cross) while (0,FWGC) corresponds to the ideal end state
+ (everyone has crossed the river, on other side).
+ A path from (FWGC,0) to (0,FWGC) would correspond to a particular list
+ of allowable moves/trips the farmer could make in the puzzle resulting
+ in him getting everyone from one side to another.
+\end_layout
+
+\begin_layout Subsection*
+Part d
+\end_layout
+
+\begin_layout Standard
+To find 2 different solutions, we shall consider 2 unique paths from the
+ starting state to ending state:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(FWGC,\emptyset)\rightarrow(WC,FG)\rightarrow(FWC,G)\rightarrow(W,FGC)\rightarrow(FWG,C)\rightarrow(G,FWC)\rightarrow(FG,WC)\rightarrow(\emptyset,FWGC)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(This corresponds to taking goat right, returning left, taking cabbage right,
+ taking goat left, taking wolf right, returning left, and finally taking
+ goat right)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(FWGC,0)\rightarrow(WC,FG)\rightarrow(FWC,G)\rightarrow(C,FWG)\rightarrow(FGC,W)\rightarrow(G,FWC)\rightarrow(FG,WC)\rightarrow(\emptyset,FWGC)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(This corresponds to taking goat right, returning left, taking wolf right,
+ taking goat left, taking cabbage right, returning left, and finally taking
+ goat right)
+\end_layout
+
+\begin_layout Subsection*
+Part e
+\end_layout
+
+\begin_layout Standard
+On the first solution, we see that there are 4 animal crossings (goat right;
+ goat left; wolf right;goat right) so that would be a total total of $4.
+\end_layout
+
+\begin_layout Standard
+On the second solution, we see that there are 4 animal crossings (goat right;
+ wolf right; goat left;goat right) so that would be a total total of $4.
+\end_layout
+
+\begin_layout Standard
+Both methods require the same number of dollars to bring everyone to the
+ other side, so either solution is feasible.
+ 
+\end_layout
+
+\end_body
+\end_document
