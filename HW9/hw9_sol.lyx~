@@ -255,10 +255,10 @@ In this case, consider
 \end_inset
 
 ; hence, 
-\begin_inset Formula $(u,x)\in$
+\begin_inset Formula $(u,x)\in E_{H}$
 \end_inset
 
-.
+ by definition.
  Furthermore, we can see that v is not connected to 
 \begin_inset Formula $x$
 \end_inset
@@ -272,7 +272,23 @@ In this case, consider
 \end_inset
 
 .
- Hence
+ Hence, 
+\begin_inset Formula $(v,x)\in E_{H}$
+\end_inset
+
+ by definition.
+ Because u is connected to x in H and v is connected to x in H, we see that
+ u and v must be connected to each other (just consider the path 
+\begin_inset Formula $((u,x),(x,v))$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Overall, this shows that u,v are connected in H.
+ Because u,v are arbitary, it follows that every vertex is connected to
+ every other one, implying that H is connected.
 \end_layout
 
 \begin_layout Section*
