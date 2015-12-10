@@ -64,6 +64,14 @@
 
 \begin_body
 
+\begin_layout Title
+CS240: Homework 10
+\end_layout
+
+\begin_layout Author
+Sahit Mandala
+\end_layout
+
 \begin_layout Section*
 Problem 1
 \end_layout
@@ -87,7 +95,7 @@ Problem 2
 
 \begin_layout Standard
 The chromatic number of a tree is 2 (except for the tree on 1 vertex, an
- edge case, which trivially has chromatic number 1).
+ edge case, which clearly has chromatic number 1).
  That is, we can always color a tree with 2 or more vertices with 2 colors
  s.t.
  adjecent nodes have no edges between them.

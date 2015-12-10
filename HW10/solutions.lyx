@@ -64,6 +64,14 @@
 
 \begin_body
 
+\begin_layout Title
+CS240: Homework 10
+\end_layout
+
+\begin_layout Author
+Sahit Mandala
+\end_layout
+
 \begin_layout Section*
 Problem 1
 \end_layout
@@ -491,6 +499,10 @@ That is, any binary string with zero or more 0s at the beginning and atleast
 
 \begin_layout Section*
 Problem 6
+\end_layout
+
+\begin_layout Standard
+See attached
 \end_layout
 
 \end_body
