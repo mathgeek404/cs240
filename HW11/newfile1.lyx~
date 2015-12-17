@@ -1,0 +1,572 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.5in
+\topmargin 0.5in
+\rightmargin 0.5in
+\bottommargin 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+CS240: Homework 11
+\end_layout
+
+\begin_layout Title
+Sahit Mandala
+\end_layout
+
+\begin_layout Section*
+Problem 1
+\end_layout
+
+\begin_layout Subsection*
+A)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\epsilon|1|0|(01)|(10)|(11)|(00)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+B)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $00(0|1){}^{*}0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+C)
+\end_layout
+
+\begin_layout Standard
+Assuming that there does not have to be atleast a single 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ (e.g.
+ the empty string is valid):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(0|100)^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+D)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(0{}^{*}10{}^{*}10{}^{*})^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note by order of operations that this is equivalent to: 
+\begin_inset Formula $((0){}^{*}1(0){}^{*}1(0){}^{*})^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 2
+\end_layout
+
+\begin_layout Subsection*
+A)
+\end_layout
+
+\begin_layout Standard
+There 26 total capital letters, so we have 
+\begin_inset Formula $26$
+\end_inset
+
+ choices for each initial in a 3-letter initial; hence, we have 
+\begin_inset Formula $26*26*26=17576$
+\end_inset
+
+ possibilities.
+\end_layout
+
+\begin_layout Subsection*
+B)
+\end_layout
+
+\begin_layout Standard
+We have 26 choices for the first, 25 for the second (since we can't choose
+ whichever the first was), and 24 for the last one (again, since we can't
+ choose the 2 letters from earlier), so 
+\begin_inset Formula $26*25*24=15600$
+\end_inset
+
+ possibilities.
+\end_layout
+
+\begin_layout Subsection*
+C)
+\end_layout
+
+\begin_layout Standard
+If A is the first letter, than we only have freedom in the last 2 letters;
+ each has 26 possible letters, so we have 
+\begin_inset Formula $26*26=676$
+\end_inset
+
+ possibilities.
+\end_layout
+
+\begin_layout Subsection*
+D)
+\end_layout
+
+\begin_layout Standard
+The intials which have atleast 1 
+\begin_inset Quotes eld
+\end_inset
+
+A
+\begin_inset Quotes erd
+\end_inset
+
+ can be broken down into several catagories: Initials with exactly 1 
+\begin_inset Quotes eld
+\end_inset
+
+A
+\begin_inset Quotes erd
+\end_inset
+
+, Initials with exactly 2 
+\begin_inset Quotes eld
+\end_inset
+
+A
+\begin_inset Quotes erd
+\end_inset
+
+s, Initials with all 3 
+\begin_inset Quotes eld
+\end_inset
+
+A
+\begin_inset Quotes erd
+\end_inset
+
+s.
+\end_layout
+
+\begin_layout Standard
+Clearly, there is only 1 string with all As (namely AAA), so we have 1 for
+ that catagory.
+\end_layout
+
+\begin_layout Standard
+Next, for exactly 2 As, notice that the string can take one of the following
+ forms: 
+\begin_inset Formula $XAA,AXA,AAX$
+\end_inset
+
+.
+ Here, X is any non-A letter.
+ In each case, we have 25 choices for X, so we have a total of 
+\begin_inset Formula $25+25+25=75$
+\end_inset
+
+ choices for strings with exactly 2 As.
+\end_layout
+
+\begin_layout Standard
+Next, for exactly 1 
+\begin_inset Quotes eld
+\end_inset
+
+A
+\begin_inset Quotes erd
+\end_inset
+
+, notice that the string can take one of the following forms: 
+\begin_inset Formula $XXA,AXX,XAX$
+\end_inset
+
+.
+ Here, X is any non-A letter.
+ In each case, we have 25 choices for X and thus each form has 
+\begin_inset Formula $25*25$
+\end_inset
+
+ total possibilities; so we have a total of 
+\begin_inset Formula $25*25+25*25+25*25=1875$
+\end_inset
+
+ choices for strings with exactly 1 
+\begin_inset Quotes eld
+\end_inset
+
+A
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In total, we have 
+\begin_inset Formula $1+75+75+1875$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Problem 3
+\end_layout
+
+\begin_layout Subsection*
+A)
+\end_layout
+
+\begin_layout Standard
+We assume ordering does not apply to poker hands.
+ 
+\end_layout
+
+\begin_layout Standard
+If the hand has exactly 2 queens, we have to choose 2 cards from the 4 total
+ queens, so the number of ways to pick 2 queens from 4 is 
+\begin_inset Formula $\left(\begin{array}{c}
+4\\
+2
+\end{array}\right)=6$
+\end_inset
+
+.
+ The rest of 3 cards which can be any among the rest of the 
+\begin_inset Formula $52-4=48$
+\end_inset
+
+ non-queen cards.
+ So we have 
+\begin_inset Formula $\left(\begin{array}{c}
+48\\
+3
+\end{array}\right)=17296$
+\end_inset
+
+ choices here.
+ Total we have 
+\begin_inset Formula $6*17296$
+\end_inset
+
+ choices.
+\end_layout
+
+\begin_layout Standard
+If the hand has exactly 3 queens, we have to choose 3 cards from the 4 total
+ queens, so the number of ways to pick 3 queens from 4 is 
+\begin_inset Formula $\left(\begin{array}{c}
+4\\
+3
+\end{array}\right)=4$
+\end_inset
+
+.
+ The rest of 2 cards which can be any among the rest of the 
+\begin_inset Formula $52-4=48$
+\end_inset
+
+ non-queen cards.
+ So we have 
+\begin_inset Formula $\left(\begin{array}{c}
+48\\
+2
+\end{array}\right)=1128$
+\end_inset
+
+.
+ choices here.
+ Total we have 
+\begin_inset Formula $6*1128$
+\end_inset
+
+ choices.
+\end_layout
+
+\begin_layout Standard
+If the hand has 4 queens, then we have 48 possible choices for the last
+ card, so we have 48 choices here.
+\end_layout
+
+\begin_layout Standard
+Total, we have 
+\begin_inset Formula $6*17296+6*1128+48=110592$
+\end_inset
+
+ choices for poker hands with atleast 2 queens.
+\end_layout
+
+\begin_layout Subsection*
+B)
+\end_layout
+
+\begin_layout Standard
+The hands with the two of clubs without the 2 of spades has 50 total cards
+ (excluding the afformentioned 2) to choose the other 4 cards from, so there
+ are ,
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left(\begin{array}{c}
+50\\
+4
+\end{array}\right)=230300$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ such hands.
+\end_layout
+
+\begin_layout Standard
+The hands with the two of spades without the 2 of clubs has 50 total cards
+ (excluding the afformentioned 2) to choose the other 4 cards from, so there
+ are ,
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left(\begin{array}{c}
+50\\
+4
+\end{array}\right)=230300$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ such hands.
+\end_layout
+
+\begin_layout Standard
+The hands with the two of spades and the 2 of clubs has 50 total cards (excludin
+g the afformentioned 2) to choose the other 3 cards from, so there are ,
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left(\begin{array}{c}
+50\\
+3
+\end{array}\right)=19600$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ such hands.
+\end_layout
+
+\begin_layout Standard
+Note these hands are exclusive from the others.
+ In total, we have 
+\begin_inset Formula $230300+230300+19600=480200$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problem 4
+\end_layout
+
+\begin_layout Subsection*
+A)
+\end_layout
+
+\begin_layout Standard
+Assuming anyone can be goalkeeper, we can choose any 11 of the 15 players
+ where ordering on the choice does not matter; hence, we have 
+\begin_inset Formula $\left(\begin{array}{c}
+15\\
+11
+\end{array}\right)=1365$
+\end_inset
+
+ possible configurations.
+\end_layout
+
+\begin_layout Subsection*
+B)
+\end_layout
+
+\begin_layout Standard
+If 11 players are on the field, any choice of 5 from the 11 can be defenders,
+ any choice of 3 from the remaining 6 can be midfielders and any choice
+ of 2 of the remaining 3 can be forwards (last one becomes goalie).
+ So we have 
+\begin_inset Formula $\left(\begin{array}{c}
+11\\
+5
+\end{array}\right)\left(\begin{array}{c}
+6\\
+3
+\end{array}\right)\left(\begin{array}{c}
+3\\
+2
+\end{array}\right)=(462)(20)(3)=27720$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+C)
+\end_layout
+
+\begin_layout Standard
+If 11 players are on the field, any choice of 4 from the 11 can be defenders,
+ any choice of 4 from the remaining 7 can be midfielders and any choice
+ of 2 of the remaining 3 can be forwards (last one becomes goalie).
+ So we have 
+\begin_inset Formula $\left(\begin{array}{c}
+11\\
+4
+\end{array}\right)\left(\begin{array}{c}
+7\\
+4
+\end{array}\right)\left(\begin{array}{c}
+3\\
+2
+\end{array}\right)=(330)(35)(3)=34650$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
